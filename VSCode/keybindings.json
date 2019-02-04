@@ -1,0 +1,22 @@
+[
+  {
+    "key": "ctrl+alt+s",
+    "command": "workbench.action.files.saveAs"
+  },
+  {
+    "key": "ctrl+shift+s",
+    "command": "-workbench.action.files.saveAs"
+  },
+  {
+    "key": "ctrl+shift+s",
+    "command": "workbench.action.files.saveAll"
+  },
+  {
+    "key": "f12",
+    "command": "workbench.action.tasks.runTask"
+  },
+  {
+    "key": "f11",
+    "command": "workbench.action.tasks.terminate"
+  }
+]
