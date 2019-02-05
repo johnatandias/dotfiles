@@ -38,10 +38,14 @@
   "window.zoomLevel": -1,
   "workbench.colorCustomizations": {
     "titleBar.activeBackground": "#2196F3",
-    "titleBar.activeForeground": "#fff"
+    "titleBar.activeForeground": "#fff",
+    "titleBar.border": "#2196F3",
+    "editorBracketMatch.background": "#2196F3",
+    "editorBracketMatch.border": "#2196F3",
+    "editorLineNumber.activeForeground": "#2196F3"
   },
   "workbench.colorTheme": "Material Theme Darker High Contrast",
   "workbench.editor.closeEmptyGroups": true,
   "workbench.iconTheme": "eq-material-theme-icons",
-  "workbench.sideBar.location": "right"
+  "workbench.sideBar.location": "left"
 }
