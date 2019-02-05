@@ -1,0 +1,45 @@
+#!/bin/bash
+
+BASE_PATCH="$HOME/.config"
+CODE_PATCH="Code/User"
+CODE_INSIDERS_PATCH="Code\ -\ Insiders"
+
+function createSymbolicLink {
+  TO_PATH=$1
+  FROM_PATH="$(pwd)/$2"
+
+  ln -s $FROM_PATH $TO_PATH
+}
+
+function deleteFile {
+  FILE_NAME=$1
+  ON_CODE_FOLDER="$BASE_PATCH/$CODE_PATCH/$FILE_NAME"
+  ON_INSIDERS_FOLDER="$BASE_PATCH/$CODE_INSIDERS_PATCH/$FILE_NAME"
+
+  # Delete on Code folder
+  if [ -f "$ON_CODE_FOLDER" ];
+  then
+    rm -rf $ON_CODE_FOLDER
+    createSymbolicLink $ON_CODE_FOLDER $FILE_NAME
+  fi
+
+  # Delete on Code insiders folder
+  if [ -f "$ON_INSIDERS_FOLDER" ];
+  then
+    rm -rf $ON_INSIDERS_FOLDER
+    createSymbolicLink $ON_INSIDERS_FOLDER $FILE_NAME
+  fi
+}
+
+function deleteDefaultFiles {
+  for file in ./*; do
+    FILE_NAME=${file//'./'/''}
+
+    if [ "$FILE_NAME" != "configure" ]
+      then
+        deleteFile $FILE_NAME
+      fi
+  done
+}
+
+deleteDefaultFiles
