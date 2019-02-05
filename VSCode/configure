@@ -42,4 +42,86 @@ function deleteDefaultFiles {
   done
 }
 
-deleteDefaultFiles
+function installExtensions {
+  declare -a extensions=(# Language helper
+                         "adamvoss.vscode-languagetool"
+                         "adamvoss.vscode-languagetool-en"
+
+                         # Improve vscode
+                         "alefragnani.project-manager"
+                         "christian-kohler.path-intellisense"
+                         "EditorConfig.EditorConfig"
+                         "formulahendry.code-runner"
+                         "joelday.docthis"
+                         "mde.select-highlight-minimap"
+                         "ms-vscode.sublime-keybindings"
+                         "ms-vsliveshare.vsliveshare"
+                         "msjsdiag.debugger-for-chrome"
+                         "ritwickdey.LiveServer"
+                         "ruiquelhas.vscode-uppercase"
+                         "Shan.code-settings-sync"
+                         "WakaTime.vscode-wakatime"
+                         "wayou.vscode-todo-highlight"
+
+                         # Docker <3
+                         "PeterJausovec.vscode-docker"
+
+                         # React
+                         "gogocrow.jsx-beautify"
+
+                         # Angular
+                         "Angular.ng-template"
+                         "Mikael.Angular-BeastCode"
+
+                         # CSS
+                         "Zignd.html-css-class-completion"
+
+                         # SVG
+                         "cssho.vscode-svgviewer"
+
+                         # Git
+                         "DotJoshJohnson.xml"
+                         "eamodio.gitlens"
+                         "michelemelluso.gitignore"
+
+                         # CI
+                         "cstuder.gitlab-ci-validator"
+
+                         # Helpers for coding in best practices
+                         "dbaeumer.vscode-eslint"
+                         "eg2.tslint"
+                         "esbenp.prettier-vscode"
+                         "foxundermoon.shell-format"
+
+                         # Javascript
+                         "eg2.vscode-npm-script"
+
+                         # Themes
+                         "Equinusocio.vsc-material-theme"
+                         "ms-vscode.Theme-TomorrowKit"
+                         "robertohuertasm.vscode-icons"
+                         "teabyii.ayu"
+
+                         # Syntax support
+                         "mikestead.dotenv"
+
+                         # Songs control
+                         "shyykoserhiy.vscode-spotify")
+
+  arraylength=${#extensions[@]}
+
+  for (( i=1; i<${arraylength}+1; i++ ));
+  do
+    if ! [ -x "$(code -v)" ]; then
+      code --install-extension ${extensions[$i-1]}
+    fi
+
+    if ! [ -x "$(code-insiders -v)" ]; then
+      code-insiders --install-extension ${extensions[$i-1]}
+    fi
+  done
+
+  deleteDefaultFiles
+}
+
+installExtensions
