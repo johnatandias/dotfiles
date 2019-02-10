@@ -44,8 +44,7 @@ function deleteDefaultFiles {
 
 function installExtensions {
   declare -a extensions=(# Language helper
-                         "adamvoss.vscode-languagetool"
-                         "adamvoss.vscode-languagetool-en"
+                         "streetsidesoftware.code-spell-checker"
 
                          # Improve vscode
                          "alefragnani.project-manager"
@@ -62,12 +61,16 @@ function installExtensions {
                          "Shan.code-settings-sync"
                          "WakaTime.vscode-wakatime"
                          "wayou.vscode-todo-highlight"
+                         "auchenberg.vscode-browser-preview"
 
                          # Docker <3
                          "PeterJausovec.vscode-docker"
 
                          # React
                          "gogocrow.jsx-beautify"
+
+                         # React Native
+                         "vsmobile.vscode-react-native"
 
                          # Angular
                          "Angular.ng-template"
