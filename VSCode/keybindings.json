@@ -18,5 +18,9 @@
   {
     "key": "f11",
     "command": "workbench.action.tasks.terminate"
+  },
+  {
+    "key": "ctrl+alt+[BracketLeft]",
+    "command": "extension.openHyper"
   }
 ]

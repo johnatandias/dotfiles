@@ -1,8 +1,48 @@
 {
+  "[css]": {
+    "editor.defaultFormatter": "HookyQR.beautify"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "beautify.language": {
+    "html": [
+      "htm",
+      "html"
+    ]
+  },
+  "cSpell.diagnosticLevel": "Warning",
+  "cSpell.language": "en,en-US",
+  "debug.console.fontSize": 16,
   "editor.fontFamily": "Fira Code",
   "editor.fontLigatures": true,
-  "editor.fontSize": 18,
+  "editor.fontSize": 15,
   "editor.fontWeight": "500",
+  "editor.lineHeight": 23,
   "editor.minimap.enabled": true,
   "editor.minimap.maxColumn": 50,
   "editor.renderIndentGuides": false,
@@ -11,8 +51,8 @@
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "files.associations": {
-    "*.webapp": "json",
-    "*.log": "log"
+    "*.log": "log",
+    "*.webapp": "json"
   },
   "files.autoSave": "off",
   "files.insertFinalNewline": false,
@@ -21,34 +61,44 @@
   "gitlens.settings.mode": "advanced",
   "gitlens.views.compare.location": "explorer",
   "gitlens.views.repositories.files.layout": "list",
+  "go.autocompleteUnimportedPackages": true,
+  "go.gopath": "/home/johnatan/go",
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "languageTool.language": "en-US",
+  "liveshare.allowGuestDebugControl": true,
+  "liveshare.allowGuestTaskControl": true,
+  "liveshare.anonymousGuestApproval": "accept",
+  "liveshare.featureSet": "insiders",
+  "liveshare.increasedGuestLimit": true,
+  "markdown.preview.fontSize": 17,
+  "prettier.htmlWhitespaceSensitivity": "ignore",
   "prettier.singleQuote": true,
   "projectManager.filterOnFullPath": true,
   "projectManager.groupList": true,
-  "projectManager.vscode.baseFolders": ["/home/johnatan/KaiOS/projects"],
-  "sync.autoDownload": false,
-  "sync.autoUpload": false,
-  "sync.forceDownload": false,
+  "sync.autoDownload": true,
+  "sync.autoUpload": true,
+  "sync.forceDownload": true,
+  "sync.forceUpload": true,
   "sync.gist": "sync",
-  "sync.quietSync": false,
+  "sync.quietSync": true,
   "sync.removeExtensions": true,
   "sync.syncExtensions": true,
+  "terminal.integrated.fontSize": 15,
+  "terminal.integrated.rendererType": "dom",
+  "terminal.integrated.shell.linux": "zsh",
   "terminal.integrated.splitCwd": "workspaceRoot",
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "vsicons.projectDetection.disableDetect": true,
+  "vs-kubernetes": {
+    "vs-kubernetes.draft-path": "/home/johnatan/.vs-kubernetes/tools/draft/linux-amd64/draft",
+    "vs-kubernetes.helm-path": "/home/johnatan/.vs-kubernetes/tools/helm/linux-amd64/helm",
+    "vs-kubernetes.kubectl-path": "/home/johnatan/.vs-kubernetes/tools/kubectl/kubectl",
+    "vs-kubernetes.minikube-path": "/home/johnatan/.vs-kubernetes/tools/minikube/linux-amd64/minikube"
+  },
+  "vsicons.projectDetection.autoReload": true,
   "window.titleBarStyle": "custom",
   "window.zoomLevel": -1,
-  "workbench.colorCustomizations": {
-    "titleBar.activeBackground": "#2196F3",
-    "titleBar.activeForeground": "#fff",
-    "titleBar.border": "#2196F3",
-    "editorBracketMatch.background": "#2196F3",
-    "editorBracketMatch.border": "#2196F3",
-    "editorLineNumber.activeForeground": "#2196F3"
-  },
-  "workbench.colorTheme": "Material Theme Darker High Contrast",
+  "workbench.colorTheme": "Visual Studio Dark",
   "workbench.editor.closeEmptyGroups": true,
-  "workbench.iconTheme": "eq-material-theme-icons",
-  "workbench.sideBar.location": "left"
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.sideBar.location": "left",
+  "workbench.startupEditor": "newUntitledFile"
 }
