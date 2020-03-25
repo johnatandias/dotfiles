@@ -1,0 +1,13 @@
+[user]
+	name = Johnatan Dias
+	email = johnatan.dias@gmail.com
+[core]
+	editor = code --wait
+[color]
+	ui = true
+[alias]
+	s = status -s
+  b = branch
+	ac = !git add . && git commit
+	lg = log --all --graph --decorate --oneline --abbrev-commit
+  last = for-each-ref --sort='-authordate:iso8601' --format=' %(authordate:relative)%09%(refname:short)' refs/heads
