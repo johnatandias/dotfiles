@@ -25,6 +25,7 @@ source $ZSH/oh-my-zsh.sh
 alias code='code-insiders'
 alias vim='nvim'
 alias zs='source ~/.zshrc'
+alias ze='vim ~/.zshrc'
 alias python='python3'
 
 export EDITOR='nvim'
@@ -46,7 +47,7 @@ POWERLEVEL9K_FOLDER_ICON="\uf07b"
 POWERLEVEL9K_ETC_ICON="\ue5fc"
 POWERLEVEL9K_VCS_GIT_ICON="\uf1d3"
 POWERLEVEL9K_VCS_GIT_GITHUB_ICON="\uf113"
-POWERLEVEL9K_VCS_GIT_BITBUCKET_ICON="\ue703"
+POWERLEVEL9K_VCS_GIT_BITBUCKET_ICON='\uf5a7'
 POWERLEVEL9K_VCS_GIT_GITLAB_ICON="\uf296"
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
 POWERLEVEL9K_SHORTEN_DELIMITER=".."

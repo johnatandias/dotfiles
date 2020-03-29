@@ -22,10 +22,11 @@
 	prune = true
 
 [alias]
-	a = add .
+	a = add --all
 	s = status -s -b
   b = branch
 	ac = !git add . && git commit
 	lg = log --graph --date=relative --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ad)%Creset'
   last = for-each-ref --sort='-authordate:iso8601' --format=' %(authordate:relative)%09%(refname:short)' refs/heads
 	amend = commit --amend --no-edit
+	compare = !git lg $1...$2 --no-merges

@@ -36,6 +36,11 @@ set ts=2
 set sw=2
 set nowrap
 set encoding=utf8
+set autoindent
+set incsearch
+set wildmenu
+set confirm
+set title
 
 let mapleader="\<space>"
 nnoremap <leader>; A;<esc>
