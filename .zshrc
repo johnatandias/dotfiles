@@ -18,6 +18,7 @@ plugins=(
   npx
   vscode
   go
+  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -27,10 +28,31 @@ alias vim='nvim'
 alias zs='source ~/.zshrc'
 alias ze='vim ~/.zshrc'
 alias python='python3'
+alias pip='pip3'
+
+# Changing "ls" to "exa"
+alias ls='exa -al --color=always --group-directories-first' # my preferred listing
+alias la='exa -a --color=always --group-directories-first'  # all files and dirs
+alias ll='exa -l --color=always --group-directories-first'  # long format
+alias lt='exa -aT --color=always --group-directories-first' # tree listing
 
 export EDITOR='nvim'
 export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+
+export PYTHON_BIN_PATH="$(python3 -m site --user-base)/bin"
+export PATH="$PATH:$PYTHON_BIN_PATH"
+
+# Android
+export ANDROID_HOME=$HOME/Android
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+# Yarn
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="$PATH:$(yarn global bin)"
 
 # Powerlevel9k configuration
 POWERLEVEL9K_MODE='nerdfont-complete'
