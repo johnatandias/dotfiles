@@ -30,3 +30,4 @@
   last = for-each-ref --sort='-authordate:iso8601' --format=' %(authordate:relative)%09%(refname:short)' refs/heads
 	amend = commit --amend --no-edit
 	compare = !git lg $1...$2 --no-merges
+	clear = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d"

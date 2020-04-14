@@ -27,8 +27,10 @@ alias code='code-insiders'
 alias vim='nvim'
 alias zs='source ~/.zshrc'
 alias ze='vim ~/.zshrc'
+alias ve='vim ~/.dotfiles/nvim/init.vim'
 alias python='python3'
 alias pip='pip3'
+alias cat="bat"
 
 # Changing "ls" to "exa"
 alias ls='exa -al --color=always --group-directories-first' # my preferred listing
@@ -37,18 +39,31 @@ alias ll='exa -l --color=always --group-directories-first'  # long format
 alias lt='exa -aT --color=always --group-directories-first' # tree listing
 
 export EDITOR='nvim'
+
+# Go lang
 export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
+# Python
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/.local/lib
+export LDFLAGS="-L$HOME/.local"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
 export PYTHON_BIN_PATH="$(python3 -m site --user-base)/bin"
 export PATH="$PATH:$PYTHON_BIN_PATH"
+
+# Java
+export JAVA_HOME=/opt/java/jdk-13
+export PATH=$JAVA_HOME/bin:$PATH
 
 # Android
 export ANDROID_HOME=$HOME/Android
 export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/build-tools
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools
+export PATH=$PATH:$ANDROID_HOME/platforms
+export ANDROID_SDK_ROOT=$ANDROID_HOME
 
 # Yarn
 export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -81,3 +96,4 @@ POWERLEVEL9K_DISABLE_RPROMPT=true
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
