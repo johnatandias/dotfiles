@@ -29,6 +29,7 @@ call plug#begin()
   Plug 'tpope/vim-fugitive'
   Plug 'ryanoasis/vim-devicons'
   Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+  Plug 'wakatime/vim-wakatime'
 call plug#end()
 
 runtime! config/blamer.vim
