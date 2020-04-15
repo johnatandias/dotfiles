@@ -31,6 +31,8 @@ alias ve='vim ~/.dotfiles/nvim/init.vim'
 alias python='python3'
 alias pip='pip3'
 alias cat="bat"
+alias copy='xclip -selection c'
+alias paste='xclip -selection c -o'
 
 # Changing "ls" to "exa"
 alias ls='exa -al --color=always --group-directories-first' # my preferred listing
