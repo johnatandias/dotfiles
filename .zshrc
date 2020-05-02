@@ -28,8 +28,8 @@ source $ZSH/oh-my-zsh.sh
 alias code='code-insiders'
 alias vim='nvim'
 alias zs='source ~/.zshrc'
-alias ze='vim ~/.zshrc'
-alias ve='vim ~/.dotfiles/nvim/init.vim'
+alias ze='cd ~/.dotfiles && vim .zshrc'
+alias ve='cd ~/.dotfiles && vim nvim/init.vim'
 alias python='python3'
 alias pip='pip3'
 alias cat="bat"
