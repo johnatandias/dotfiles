@@ -1,3 +1,4 @@
+export TERM="xterm-256color"
 export ZSH="/home/johnatan/.oh-my-zsh"
 
 ZSH_THEME="powerlevel9k/powerlevel9k"
@@ -19,6 +20,7 @@ plugins=(
   vscode
   go
   zsh-syntax-highlighting
+  tmux
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -33,6 +35,7 @@ alias pip='pip3'
 alias cat="bat"
 alias copy='xclip -selection c'
 alias paste='xclip -selection c -o'
+alias tx='tmuxinator'
 
 # Changing "ls" to "exa"
 alias ls='exa -al --color=always --group-directories-first' # my preferred listing
