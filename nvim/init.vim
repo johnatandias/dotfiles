@@ -34,7 +34,6 @@ call plug#end()
 
 runtime! config/blamer.vim
 runtime! config/coc.vim
-runtime! config/denite.vim
 runtime! config/fzf.vim
 runtime! config/general.vim
 runtime! config/git.vim

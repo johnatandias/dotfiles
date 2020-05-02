@@ -1,5 +1,7 @@
 nnoremap <C-p> :GFiles<cr>
-nnoremap <leader><CR> :Buffers<cr>
+nmap ; :Buffers<CR>
+
+let g:fzf_buffers_jump = 1
 
 " Switch tabs with Ctrl left and right
 nnoremap <C-right> :tabnext<CR>
