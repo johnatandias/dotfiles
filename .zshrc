@@ -36,6 +36,7 @@ alias cat="bat"
 alias copy='xclip -selection c'
 alias paste='xclip -selection c -o'
 alias tx='tmuxinator'
+alias vf='vifm'
 
 # Changing "ls" to "exa"
 alias ls='exa -al --color=always --group-directories-first' # my preferred listing
@@ -101,4 +102,3 @@ POWERLEVEL9K_DISABLE_RPROMPT=true
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-

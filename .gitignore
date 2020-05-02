@@ -1,3 +1,4 @@
 nvim/plugged/*
 .vscode
 .tmuxinator
+vifm/vifminfo
