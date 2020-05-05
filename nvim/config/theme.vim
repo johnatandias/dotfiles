@@ -1,4 +1,4 @@
-syntax enable
 colorscheme monokai
-let g:molokai_original = 1
-set background=dark
+hi! Normal ctermbg=NONE guibg=NONE
+hi! NonText ctermbg=NONE guibg=NONE
+hi! CursorLineNR ctermbg=NONE guibg=NONE

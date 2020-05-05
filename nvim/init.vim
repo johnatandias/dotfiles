@@ -1,5 +1,5 @@
 call plug#begin()
-  Plug 'sickill/vim-monokai'
+  Plug 'while1eq1/vim-monokai-black'
   Plug 'terryma/vim-multiple-cursors'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
