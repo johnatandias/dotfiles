@@ -20,3 +20,6 @@ inoremap <M-Right> :bnext<CR>
 
 " Tagbar
 map <C-m> :TagbarToggle<CR>
+
+" close current buffer
+map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
