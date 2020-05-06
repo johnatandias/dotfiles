@@ -30,6 +30,7 @@ call plug#begin()
   Plug 'ryanoasis/vim-devicons'
   Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
   Plug 'wakatime/vim-wakatime'
+  Plug 'majutsushi/tagbar'
 call plug#end()
 
 runtime! config/blamer.vim

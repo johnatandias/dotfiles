@@ -18,3 +18,5 @@ nnoremap <M-Down> :b#<bar>bd#<CR>
 inoremap <M-Left> :bprev<CR>
 inoremap <M-Right> :bnext<CR>
 
+" Tagbar
+map <C-m> :TagbarToggle<CR>
