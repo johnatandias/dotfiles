@@ -31,6 +31,7 @@ call plug#begin()
   Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
   Plug 'wakatime/vim-wakatime'
   Plug 'majutsushi/tagbar'
+  Plug 'luochen1990/rainbow'
 call plug#end()
 
 runtime! config/blamer.vim
@@ -43,4 +44,5 @@ runtime! config/lightline.vim
 runtime! config/nerdcommenter.vim
 runtime! config/nerdtree.vim
 runtime! config/prettier.vim
+runtime! config/rainbow.vim
 runtime! config/theme.vim
