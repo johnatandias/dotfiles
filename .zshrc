@@ -45,6 +45,7 @@ alias ll='exa -l --color=always --group-directories-first'  # long format
 alias lt='exa -aT --color=always --group-directories-first' # tree listing
 
 export EDITOR='nvim'
+export TERMINAL='alacritty'
 
 # Go lang
 export GOPATH=$HOME/go
