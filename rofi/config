@@ -1,0 +1,4 @@
+rofi.theme: android_notification
+rofi.terminal: alacritty
+rofi.ssh-client: ssh
+rofi.ssh-command: {terminal} -- {ssh-client} {host}
