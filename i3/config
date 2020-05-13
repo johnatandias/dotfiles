@@ -131,33 +131,15 @@ bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 
 # Open specific applications in floating mode
-for_window [title="alsamixer"] floating enable border pixel 1
-for_window [class="Calamares"] floating enable border normal
-for_window [class="Clipgrab"] floating enable
-for_window [title="File Transfer*"] floating enable
-for_window [class="Galculator"] floating enable border pixel 1
-for_window [class="GParted"] floating enable border normal
-for_window [title="i3_help"] floating enable sticky enable border normal
-for_window [class="Lightdm-gtk-greeter-settings"] floating enable
-for_window [class="Lxappearance"] floating enable sticky enable border normal
-for_window [class="Manjaro-hello"] floating enable
-for_window [class="Manjaro Settings Manager"] floating enable border normal
-for_window [title="MuseScore: Play Panel"] floating enable
-for_window [class="Nitrogen"] floating enable sticky enable border normal
-for_window [class="Oblogout"] fullscreen enable
-for_window [class="octopi"] floating enable
-for_window [title="About Pale Moon"] floating enable
-for_window [class="Pamac-manager"] floating enable
-for_window [class="Pavucontrol"] floating enable
-for_window [class="qt5ct"] floating enable sticky enable border normal
-for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
-for_window [class="Simple-scan"] floating enable border normal
-for_window [class="(?i)System-config-printer.py"] floating enable border normal
-for_window [class="Skype"] floating enable border normal
-for_window [class="Thus"] floating enable border normal
-for_window [class="Timeset-gui"] floating enable border normal
-for_window [class="(?i)virtualbox"] floating enable border normal
-for_window [class="Xfburn"] floating enable
+for_window [class="alacritty"] floating enable, move container to workspace $ws1, output primary, workspace $ws1
+for_window [class="chrome"] floating enable, move to workspace $ws2, output primary, workspace $ws2
+for_window [class="brave"] floating enable, move to workspace $ws3, output primary, workspace $ws3
+for_window [class="discord"] floating disable, move to workspace $ws4, workspace $ws4
+
+# Bindings to open applications
+bindsym $mod+F1 exec google-chrome-stable
+bindsym $mod+F2 exec brave
+bindsym $mod+F3 exec code-insiders
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -219,9 +201,9 @@ exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
-exec_always --no-startup-id $HOME/.config/polybar/i3wmthemer_bar_launch.sh
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id $HOME/.dotfiles/i3/fix-monitor.sh
-exec_always --no-startup-id feh --bg-fill $HOME/.dotfiles/wallpaper/current.jpg
+exec_always --no-startup-id feh --bg-scale $HOME/.dotfiles/wallpaper/current.jpg
 
 # Theme colors
 client.focused #c5c8c6 #1d1f21 #c5c8c6 #81a2be #81a2be
@@ -234,7 +216,7 @@ client.background #1d1f21
 
 # Gaps
 gaps inner 10
-gaps outer -4
+gaps outer 10
 
 smart_gaps on
 
@@ -285,4 +267,24 @@ bindsym XF86AudioMute exec --no-startup-id amixer -q set Master toggle
 # touchpad on and off controller on laptop with Fn+<touchpad control functional key>
 bindsym XF86TouchpadOn exec --no-startup-id synclient Touchpadoff=0
 bindsym XF86TouchpadOff exec --no-startup-id synclient Touchpadoff=1
+
+bar {
+  i3bar_command i3bar -t
+
+  position            top
+  tray_output         none
+  workspace_buttons   no
+  height              38
+
+  # prevent any accidental clicks/scrolls
+  bindsym button1 nop
+  bindsym button2 nop
+  bindsym button3 nop
+  bindsym button4 nop
+  bindsym button5 nop
+
+  colors {
+    background #050707
+  }
+}
 
