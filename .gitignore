@@ -1,5 +1,5 @@
 nvim/plugged/*
 .vscode
-tmuxinator
+tmuxinator/*
 vifm/vifminfo
 i3/i3log
