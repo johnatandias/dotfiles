@@ -41,9 +41,9 @@ font-5 = Font Awesome 5 Brands:pixelsize=10;3
 
 modules-left = wlan eth i3
 ; modules-center = i3
-modules-right = volume date powermenu
+modules-right = battery volume date powermenu
 
-tray-position =
+;tray-position =
 ;wm-restack = i3
 override-redirect = true
 
@@ -201,6 +201,35 @@ ramp-volume-3 = 
 ramp-volume-4 = 
 ramp-volume-5 = 
 ramp-volume-6 = 
+
+[module/battery]
+type = internal/battery
+full-at = 99
+battery = BAT1
+adapter = AC0
+poll-interval = 5
+
+# charging
+label-charging =  %percentage%%
+format-charging = <label-charging>
+format-charging-foreground = ${colors.barBackground}
+format-charging-background = ${colors.primary}
+format-charging-padding = 2
+
+# discharging
+format-discharging = <label-discharging>
+format-discharging-foreground = ${colors.barBackground}
+format-discharging-background = ${colors.primary}
+format-discharging-padding = 2
+label-discharging = %percentage%%
+
+#full
+format-full-prefix = "FULL"
+format-full = <label-full>
+format-full-foreground = ${colors.barBackground}
+format-full-background = ${colors.primary}
+format-full-padding = 2
+label-full = 
 
 [global/wm]
 margin-top = 0
