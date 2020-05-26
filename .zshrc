@@ -37,6 +37,7 @@ alias copy='xclip -selection c'
 alias paste='xclip -selection c -o'
 alias tx='tmuxinator'
 alias vf='vifm'
+alias calendar='cal'
 
 # Changing "ls" to "exa"
 alias ls='exa -a --color=always --group-directories-first' # my preferred listing
