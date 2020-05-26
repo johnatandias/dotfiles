@@ -1,9 +1,5 @@
 #!/bin/env sh
 
-pkill polybar
-
+pkill polybar; 
 sleep 1;
-
 polybar main &
-polybar secondary &
-
