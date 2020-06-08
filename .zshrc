@@ -18,7 +18,7 @@ plugins=(
   node
   npx
   vscode
-  go
+  golang
   zsh-syntax-highlighting
   tmux
 )
