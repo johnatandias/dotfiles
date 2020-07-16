@@ -38,6 +38,7 @@ alias paste='xclip -selection c -o'
 alias tx='tmuxinator'
 alias vf='vifm'
 alias calendar='cal'
+eval $(thefuck --alias fix)
 
 # Changing "ls" to "exa"
 alias ls='exa -a --color=always --group-directories-first' # my preferred listing
@@ -61,7 +62,7 @@ export PYTHON_BIN_PATH="$(python3 -m site --user-base)/bin"
 export PATH="$PATH:$PYTHON_BIN_PATH"
 
 # Java
-export JAVA_HOME=/opt/java/jdk-13
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
 export PATH=$JAVA_HOME/bin:$PATH
 
 # Android
@@ -71,7 +72,7 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/build-tools
 export PATH=$PATH:$ANDROID_HOME/cmdline-tools
 export PATH=$PATH:$ANDROID_HOME/platforms
-export ANDROID_SDK_ROOT=$ANDROID_HOME
+export ANDROID_SDK_ROOT=$ANDROID_HOME/Sdk
 
 # Yarn
 export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -101,6 +102,7 @@ POWERLEVEL9K_VIRTUALENV_BACKGROUND=107
 POWERLEVEL9K_VIRTUALENV_FOREGROUND='white'
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon root_indicator ram dir_writable ssh context dir virtualenv vcs)
 POWERLEVEL9K_DISABLE_RPROMPT=true
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=1
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
