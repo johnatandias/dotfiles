@@ -37,3 +37,5 @@
 	debug = !GIT_TRACE=1 git
 	search-my-commits = !git lg --author="johnatan.dias@gmail.com"
 	search-by-author = "!f() { git lg --author=$1; }; f"
+	update = remote update -p
+	rl = "reflog --date=iso"
