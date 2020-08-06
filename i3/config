@@ -8,6 +8,9 @@ hide_edge_borders none
 # interactive screenshot by pressing printscreen
 bindsym Print exec deepin-screenshot
 
+# toggle microfone status
+bindsym $mod+m exec --no-startup-id pactl set-source-mute 1 toggle
+
 bindsym $mod+u border none
 bindsym $mod+y border pixel 1
 bindsym $mod+n border normal
