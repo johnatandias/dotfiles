@@ -139,8 +139,8 @@ bindsym $mod+F1 exec google-chrome-stable
 bindsym $mod+F2 exec brave
 bindsym $mod+F3 exec code-insiders
 
-# switch to workspace with urgent window automatically
-for_window [urgent=latest] focus
+# go to urgent
+bindsym $mod+x [urgent=latest] focus
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
