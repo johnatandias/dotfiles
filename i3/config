@@ -18,6 +18,7 @@ font xft:URWGothic-Book 11
 floating_modifier $mod
 
 bindsym $mod+Return exec alacritty
+bindsym $mod+Shift+Return exec google-chrome-stable
 
 # Window kill command
 bindsym $mod+Shift+q kill
