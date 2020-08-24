@@ -107,4 +107,6 @@ POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=1
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-if [ "$TMUX" = "" ]; then tmux; fi
+if [[ $VSCODE != true ]]; then
+  if [ "$TMUX" = "" ]; then tmux; fi
+fi
