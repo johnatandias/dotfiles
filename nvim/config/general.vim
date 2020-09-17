@@ -15,4 +15,4 @@ set wildmenu
 set confirm
 set title
 set rtp+=~/.fzf
-set clipboard=unnamedplus
+set clipboard^=unnamed,unnamedplus

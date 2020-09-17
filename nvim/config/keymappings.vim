@@ -1,5 +1,5 @@
 let mapleader=" "
-nnoremap <leader>; A;<esc>
+nnoremap <leader>; a;<esc>
 nnoremap <leader>ev :vsplit ~/.config/nvim/init.vim<cr>
 nnoremap <leader>sv :source ~/.config/nvim/init.vim<cr>
 nnoremap <leader>pi :PlugInstall<cr>
@@ -25,3 +25,7 @@ nnoremap <M-k> ddkP
 vnoremap <M-j> :m '>+1<CR>gv=gv
 vnoremap <M-k> :m '<-2<CR>gv=gv
 
+nnoremap <leader>l :ls<CR>:b<space>
+
+" Copy selection to system clipboard
+vnoremap <leader>y "+y

@@ -5,3 +5,5 @@ augroup markdown
 augroup END
 
 autocmd BufRead,BufNewFile *.conf,config setf dosini
+
+let g:mustache_abbreviations = 1
