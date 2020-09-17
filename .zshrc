@@ -67,11 +67,13 @@ export PATH=$JAVA_HOME/bin:$PATH
 
 # Android
 export ANDROID_HOME=$HOME/Android
+export ANDROID_SDK=$ANDROID_HOME/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/build-tools
 export PATH=$PATH:$ANDROID_HOME/cmdline-tools
 export PATH=$PATH:$ANDROID_HOME/platforms
+export PATH=$ANDROID_SDK/emulator:$ANDROID_SDK/tools:$PATH
 export ANDROID_SDK_ROOT=$ANDROID_HOME/Sdk
 
 # Yarn
