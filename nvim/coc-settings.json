@@ -1,3 +1,4 @@
 {
-  "tsserver.trace.server": "verbose"
+  "tsserver.trace.server": "verbose",
+  "coc.preferences.hoverTarget": "float"
 }
