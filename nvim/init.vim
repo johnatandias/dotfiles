@@ -7,6 +7,8 @@ call plug#begin()
   Plug 'luochen1990/rainbow'
   Plug 'morhetz/gruvbox'
   Plug 'bagrat/vim-buffet'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
 
   " Multiples cursors
   Plug 'mg979/vim-visual-multi', {'branch': 'master'}
