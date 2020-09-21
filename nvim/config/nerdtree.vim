@@ -7,3 +7,15 @@ let NERDTreeShowHidden=1
 " (CTRL-B) open nerd tree
 nnoremap <C-b> <ESC>:NERDTreeToggle<CR>
 
+let g:NERDTreeIndicatorMapCustom = {
+  \ "Modified"  : "✹",
+  \ "Staged"    : "✚",
+  \ "Untracked" : "✭",
+  \ "Renamed"   : "➜",
+  \ "Unmerged"  : "═",
+  \ "Deleted"   : "✖",
+  \ "Dirty"     : "✗",
+  \ "Clean"     : "✔︎",
+  \ 'Ignored'   : '☒',
+  \ "Unknown"   : "?"
+\ }
