@@ -38,3 +38,6 @@ nmap <leader>f :Rg<esc>
 
 " Git commits
 nmap <leader>c :Commits<esc>
+
+" Git commits for the current buffer
+nmap <leader>h :BCommits<esc>
