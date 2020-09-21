@@ -28,7 +28,7 @@ call plug#begin()
   Plug 'tpope/vim-commentary'
 
   " Autocomplete
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'neoclide/coc.nvim' , { 'branch' : 'release' }
 
   " NERDTree
   Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
