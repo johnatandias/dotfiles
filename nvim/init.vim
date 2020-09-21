@@ -42,6 +42,7 @@ call plug#begin()
   Plug 'tpope/vim-markdown'
   Plug 'jtratner/vim-flavored-markdown'
   Plug 'mustache/vim-mustache-handlebars'
+  Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
   " Git
   Plug 'kablamo/vim-git-log'
