@@ -29,3 +29,6 @@ nnoremap <leader>l :ls<CR>:b<space>
 
 " Copy selection to system clipboard
 vnoremap <leader>y "+y
+
+" Toggle commentary
+noremap <leader>/ :Commentary<esc>
