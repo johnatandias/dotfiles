@@ -32,3 +32,6 @@ vnoremap <leader>y "+y
 
 " Toggle commentary
 noremap <leader>/ :Commentary<esc>
+
+" ripgrep
+nmap <leader>f :Rg<esc>
