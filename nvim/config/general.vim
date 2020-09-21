@@ -16,3 +16,4 @@ set confirm
 set title
 set rtp+=~/.fzf
 set clipboard^=unnamed,unnamedplus
+set autoread
