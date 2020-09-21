@@ -52,6 +52,7 @@ call plug#begin()
   Plug 'tpope/vim-fugitive'
   Plug 'airblade/vim-gitgutter'
   Plug 'APZelos/blamer.nvim'
+  Plug 'rhysd/git-messenger.vim'
 call plug#end()
 
 runtime! config/ale.vim

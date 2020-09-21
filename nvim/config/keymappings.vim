@@ -41,3 +41,6 @@ nmap <leader>c :Commits<esc>
 
 " Git commits for the current buffer
 nmap <leader>h :BCommits<esc>
+
+" Show git commit message from the line
+nmap <leader>m :GitMessenger<esc>
