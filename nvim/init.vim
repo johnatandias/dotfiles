@@ -1,6 +1,6 @@
 call plug#begin()
   " Themes and customizations
-  Plug 'while1eq1/vim-monokai-black'
+  Plug 'mcmartelle/vim-monokai-bold'
   Plug 'itchyny/lightline.vim'
   Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'ryanoasis/vim-devicons'
