@@ -1,4 +1,5 @@
 {
   "tsserver.trace.server": "verbose",
-  "coc.preferences.hoverTarget": "float"
+  "coc.preferences.hoverTarget": "float",
+  "coc.preferences.formatOnSaveFiletypes": ["js", "ts", "jsx", "tsx"]
 }
