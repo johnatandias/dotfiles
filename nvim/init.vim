@@ -51,12 +51,10 @@ call plug#begin()
   Plug 'gregsexton/gitv'
   Plug 'tpope/vim-fugitive'
   Plug 'airblade/vim-gitgutter'
-  Plug 'APZelos/blamer.nvim'
   Plug 'rhysd/git-messenger.vim'
 call plug#end()
 
 runtime! config/ale.vim
-runtime! config/blamer.vim
 runtime! config/commentary.vim
 runtime! config/fzf.vim
 runtime! config/general.vim
