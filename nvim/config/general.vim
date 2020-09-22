@@ -17,6 +17,7 @@ set title
 set rtp+=~/.fzf
 set clipboard^=unnamed,unnamedplus
 set autoread
+set updatetime=300
 
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
