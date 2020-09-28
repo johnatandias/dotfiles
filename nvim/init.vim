@@ -28,6 +28,7 @@ call plug#begin()
   Plug 'majutsushi/tagbar'
   Plug 'metakirby5/codi.vim'
   Plug 'tpope/vim-commentary'
+  Plug 'kamykn/spelunker.vim'
 
   " Autocomplete
   Plug 'neoclide/coc.nvim' , { 'branch' : 'release' }
