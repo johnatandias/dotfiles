@@ -46,6 +46,9 @@ call plug#begin()
   Plug 'jtratner/vim-flavored-markdown'
   Plug 'mustache/vim-mustache-handlebars'
   Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+  Plug 'maxmellon/vim-jsx-pretty'
+  Plug 'HerringtonDarkholme/yats.vim'
+  Plug 'pangloss/vim-javascript'
 
   " Git
   Plug 'kablamo/vim-git-log'
