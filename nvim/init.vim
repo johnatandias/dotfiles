@@ -59,6 +59,7 @@ call plug#begin()
 call plug#end()
 
 runtime! config/ale.vim
+runtime! config/coc.vim
 runtime! config/commentary.vim
 runtime! config/fzf.vim
 runtime! config/general.vim
