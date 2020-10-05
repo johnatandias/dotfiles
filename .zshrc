@@ -109,6 +109,8 @@ POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=1
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+export FZF_DEFAULT_COMMAND='rg --files --hidden -g "!.git" '
+
 if [[ $VSCODE != true ]]; then
   if [ "$TMUX" = "" ]; then tmux; fi
 fi
