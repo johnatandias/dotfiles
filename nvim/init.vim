@@ -30,16 +30,12 @@ call plug#begin()
   Plug 'majutsushi/tagbar'
   Plug 'metakirby5/codi.vim'
   Plug 'tpope/vim-commentary'
+  Plug 'chrisbra/Colorizer'
   Plug 'kamykn/spelunker.vim'
+  Plug 'mboughaba/i3config.vim'
 
   " Autocomplete
   Plug 'neoclide/coc.nvim' , { 'branch' : 'release' }
-
-  " NERDTree
-  Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-  Plug 'scrooloose/nerdcommenter'
-  Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-  Plug 'Xuyuanp/nerdtree-git-plugin'
 
   " Languages
   Plug 'sheerun/vim-polyglot'
@@ -51,6 +47,11 @@ call plug#begin()
   Plug 'maxmellon/vim-jsx-pretty'
   Plug 'HerringtonDarkholme/yats.vim'
   Plug 'pangloss/vim-javascript'
+  Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+  Plug 'othree/yajs.vim'
+
+  " Debugging
+  Plug 'puremourning/vimspector', { 'do': 'nvm install --lts 10; nvm use --lts 10; ./install_gadget.py --force-enable-node' }
 
   " Git
   Plug 'kablamo/vim-git-log'
@@ -60,17 +61,16 @@ call plug#begin()
   Plug 'rhysd/git-messenger.vim'
 call plug#end()
 
-runtime! config/ale.vim
-runtime! config/coc.vim
-runtime! config/commentary.vim
-runtime! config/fzf.vim
-runtime! config/general.vim
-runtime! config/git.vim
-runtime! config/keymappings.vim
-runtime! config/languages.vim
-runtime! config/lightline.vim
-runtime! config/nerdcommenter.vim
-runtime! config/nerdtree.vim
-runtime! config/rainbow.vim
-runtime! config/vim_buffet.vim
-runtime! config/theme.vim
+source $HOME/.dotfiles/nvim/config/ale.vim
+source $HOME/.dotfiles/nvim/config/coc.vim
+source $HOME/.dotfiles/nvim/config/commentary.vim
+source $HOME/.dotfiles/nvim/config/fzf.vim
+source $HOME/.dotfiles/nvim/config/general.vim
+source $HOME/.dotfiles/nvim/config/git.vim
+source $HOME/.dotfiles/nvim/config/keymappings.vim
+source $HOME/.dotfiles/nvim/config/languages.vim
+source $HOME/.dotfiles/nvim/config/lightline.vim
+source $HOME/.dotfiles/nvim/config/nerdcommenter.vim
+source $HOME/.dotfiles/nvim/config/rainbow.vim
+source $HOME/.dotfiles/nvim/config/vim_buffet.vim
+source $HOME/.dotfiles/nvim/config/theme.vim
