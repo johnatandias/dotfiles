@@ -14,3 +14,8 @@ autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 " Javascript
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_ngdoc = 1
+
+aug i3config_ft_detection
+  au!
+  au BufNewFile,BufRead ~/.dotfiles/i3/config set filetype=i3config
+aug end
