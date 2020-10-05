@@ -10,7 +10,6 @@ call plug#begin()
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'norcalli/nvim-colorizer.lua'
-  Plug 'morhetz/gruvbox'
 
   " Multiples cursors
   Plug 'mg979/vim-visual-multi', {'branch': 'master'}
