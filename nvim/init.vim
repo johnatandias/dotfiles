@@ -1,6 +1,6 @@
 call plug#begin()
   " Themes and customizations
-  Plug 'mcmartelle/vim-monokai-bold'
+  Plug 'bignimbus/pop-punk.vim'
   Plug 'itchyny/lightline.vim'
   Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'ryanoasis/vim-devicons'
@@ -9,6 +9,8 @@ call plug#begin()
   Plug 'bagrat/vim-buffet'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
+  Plug 'norcalli/nvim-colorizer.lua'
+  Plug 'morhetz/gruvbox'
 
   " Multiples cursors
   Plug 'mg979/vim-visual-multi', {'branch': 'master'}
