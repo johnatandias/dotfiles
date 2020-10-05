@@ -218,6 +218,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id $HOME/.dotfiles/i3/fix-monitor.sh
 exec_always --no-startup-id feh --bg-scale $HOME/.dotfiles/wallpaper/current.jpg
 exec_always $HOME/.dotfiles/i3/scripts/autoname_workspaces.py&
+exec --no-startup-id /usr/lib/polkit-kde-authentication-agent-1
 bindsym $mod+y exec $HOME/.dotfiles/i3/scripts/rename_workspace.py
 
 # Theme colors
