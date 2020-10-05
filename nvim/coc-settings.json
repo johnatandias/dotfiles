@@ -1,5 +1,41 @@
 {
   "tsserver.trace.server": "verbose",
   "coc.preferences.hoverTarget": "float",
-  "coc.preferences.formatOnSaveFiletypes": ["js", "ts", "jsx", "tsx"]
+  "coc.preferences.formatOnSaveFiletypes": [
+    "javascript",
+    "typescript",
+    "typescriptreact",
+    "json",
+    "javascriptreact"
+  ],
+  "eslint.filetypes": [
+    "javascript",
+    "typescript",
+    "typescriptreact",
+    "javascriptreact"
+  ],
+  "explorer.icon.enableNerdfont": true,
+  "explorer.file.showHiddenFiles": true,
+  "explorer.icon.enableVimDevicons": false,
+  "explorer.previewAction.onHover": false,
+  "explorer.file.column.git.showIgnored": true,
+  "explorer.quitOnOpen": true,
+  "explorer.keyMappings": {
+    "<cr>": ["expandable?", "expand", "open"],
+    "v": "open:vsplit",
+
+    "y": "copyFilepath",
+    "Y": "copyFilename",
+    "c": "copyFile",
+    "x": "cutFile",
+    "p": "pasteFile",
+    "d": "delete",
+    "D": "deleteForever",
+
+    "a": "addFile",
+    "A": "addDirectory",
+    "r": "rename",
+
+    "R": "refresh"
+  }
 }
