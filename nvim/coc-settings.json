@@ -20,8 +20,41 @@
   "explorer.previewAction.onHover": false,
   "explorer.file.column.git.showIgnored": true,
   "explorer.quitOnOpen": true,
+  "explorer.icon.customIcons": {
+    "icons": {
+      "npm": {
+        "code": " ",
+        "color": "#9c371e"
+      },
+      "folderClosed": {
+        "code": " ",
+        "color": "#90A4AE"
+      },
+      "folderOpened": {
+        "code": " ",
+        "color": "#90A4AE"
+      },
+      "css": {
+        "code": " ",
+        "color": "#42A5F5"
+      },
+      "javascript": {
+        "code": " ",
+        "color": "#FFCA28"
+      },
+      "html": {
+        "code": " ",
+        "color": "#E44D26"
+      }
+    },
+    "extensions": {},
+    "filenames": {},
+    "dirnames": {
+      "node_modules": "npm"
+    }
+  },
   "explorer.keyMappings": {
-    "<cr>": ["expandable?", "expand", "open"],
+    "o": ["expanded?", "collapse", "expand"],
     "v": "open:vsplit",
 
     "y": "copyFilepath",
