@@ -15,6 +15,13 @@ autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_ngdoc = 1
 
+" TypeScript
+let g:yats_host_keyword = 1
+
+" JSX
+let g:vim_jsx_pretty_colorful_config = 1
+
+" i3
 aug i3config_ft_detection
   au!
   au BufNewFile,BufRead ~/.dotfiles/i3/config set filetype=i3config

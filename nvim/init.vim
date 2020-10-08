@@ -10,6 +10,7 @@ call plug#begin()
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'norcalli/nvim-colorizer.lua'
+  Plug 'mcmartelle/vim-monokai-bold'
 
   " Multiples cursors
   Plug 'mg979/vim-visual-multi', {'branch': 'master'}
@@ -44,10 +45,12 @@ call plug#begin()
   Plug 'mustache/vim-mustache-handlebars'
   Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
   Plug 'maxmellon/vim-jsx-pretty'
-  Plug 'HerringtonDarkholme/yats.vim'
   Plug 'pangloss/vim-javascript'
   Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
   Plug 'othree/yajs.vim'
+  Plug 'HerringtonDarkholme/yats.vim'
+  Plug 'neoclide/vim-jsx-improve'
+  Plug 'othree/html5.vim'
 
   " Debugging
   Plug 'puremourning/vimspector', { 'do': 'nvm install --lts 10; nvm use --lts 10; ./install_gadget.py --force-enable-node' }
