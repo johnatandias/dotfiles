@@ -22,7 +22,7 @@ let g:buffet_right_trunc_icon = "\uf0a9"
 let g:buffet_show_index = 1
 
 function! g:BuffetSetCustomColors()
-  hi! BuffetCurrentBuffer    gui=NONE guibg=#000000 guifg=#ffffff
+  hi! BuffetCurrentBuffer    gui=NONE guibg=#005F5F guifg=#ffffff
   hi! BuffetActiveBuffer     gui=NONE guibg=#000000 guifg=#000000
   hi! BuffetBuffer           gui=NONE guibg=#000000 guifg=#808080
   hi! BuffetModCurrentBuffer gui=NONE guibg=#8be9fd guifg=#000000
