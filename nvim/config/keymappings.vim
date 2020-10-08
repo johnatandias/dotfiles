@@ -44,3 +44,10 @@ nmap <leader>h :BCommits<esc>
 
 " Show git commit message from the line
 nmap <leader>m :GitMessenger<esc>
+
+nmap <leader>vs :source $HOME/.dotfiles/nvim/init.vim<CR>
+
+" Identify the syntax highlighting group used at the cursor
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
