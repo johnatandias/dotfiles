@@ -45,12 +45,42 @@
       "html": {
         "code": " ",
         "color": "#E44D26"
+      },
+      "github": {
+        "code": " ",
+        "color": "#90A4AE"
+      },
+      "bitbucket": {
+        "code": " ",
+        "color": "#90A4AE"
+      },
+      "gitlab": {
+        "code": " ",
+        "color": "#E24329"
+      },
+      "env": {
+        "code": " ",
+        "color": "#90A4AE"
+      },
+      "markdown": {
+        "code": " ",
+        "color": "#90A4AE"
       }
     },
-    "extensions": {},
-    "filenames": {},
+    "extensions": {
+      "md": "markdown"
+    },
+    "filenames": {
+      "bitbucket-pipelines.yml": "bitbucket",
+      ".gitlab-ci.yml": "gitlab",
+      ".env": "env",
+      ".env.prod": "env",
+      ".env.staging": "env",
+      ".env.test": "env"
+    },
     "dirnames": {
-      "node_modules": "npm"
+      "node_modules": "npm",
+      ".github": "github"
     }
   },
   "explorer.keyMappings": {
