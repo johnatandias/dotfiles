@@ -1,8 +1,6 @@
 export TERM="xterm-256color"
 export ZSH="/home/johnatan/.oh-my-zsh"
 
-ZSH_THEME="powerlevel9k/powerlevel9k"
-
 plugins=(
   git
   yarn
@@ -24,6 +22,8 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
+source $ZSH/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 alias code='code-insiders'
 alias vim='nvim'
