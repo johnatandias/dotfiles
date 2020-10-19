@@ -51,6 +51,9 @@ call plug#begin()
   Plug 'HerringtonDarkholme/yats.vim'
   Plug 'neoclide/vim-jsx-improve'
   Plug 'othree/html5.vim'
+  Plug 'jelera/vim-javascript-syntax'
+  Plug 'leafgarland/typescript-vim' 
+  Plug 'peitalin/vim-jsx-typescript'
 
   " Debugging
   Plug 'puremourning/vimspector', { 'do': 'nvm install --lts 10; nvm use --lts 10; ./install_gadget.py --force-enable-node' }
