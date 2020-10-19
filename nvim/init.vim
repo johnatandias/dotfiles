@@ -10,7 +10,7 @@ call plug#begin()
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'norcalli/nvim-colorizer.lua'
-  Plug 'mcmartelle/vim-monokai-bold'
+  Plug 'johnatandias/vim-monokai-bold'
 
   " Multiples cursors
   Plug 'mg979/vim-visual-multi', {'branch': 'master'}
