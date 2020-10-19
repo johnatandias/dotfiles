@@ -14,3 +14,4 @@ hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE
 hi! CursorLineNR ctermbg=NONE guibg=NONE
 hi! Comment ctermfg=Gray ctermbg=Black guifg=Black guibg=Gray
+syn keyword Plug Plug
