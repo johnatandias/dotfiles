@@ -9,7 +9,8 @@ let g:coc_global_extensions = [
   \ 'coc-json',
   \ 'coc-html',
   \ 'coc-css',
-  \ 'coc-marketplace'
+  \ 'coc-marketplace',
+  \ 'coc-ultisnips'
 \ ]
 
 " GoTo code navigation.
