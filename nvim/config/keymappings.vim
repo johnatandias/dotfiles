@@ -32,17 +32,28 @@ noremap <leader>/ :Commentary<esc>
 nmap <leader>f :Rg<esc>
 
 " Git commits
-nmap <leader>c :Commits<esc>
+nmap <leader>gc :Commits<esc>
 
 " Git commits for the current buffer
-nmap <leader>h :BCommits<esc>
+nmap <leader>gh :BCommits<esc>
 
 " Show git commit message from the line
-nmap <leader>m :GitMessenger<esc>
+nmap <leader>gm :GitMessenger<esc>
 
+" Source VIM settings
 nmap <leader>vs :source $HOME/.dotfiles/nvim/init.vim<CR>
 
 " Identify the syntax highlighting group used at the cursor
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
+"" Split
+noremap <Leader>h :<C-u>split<CR>
+noremap <Leader>v :<C-u>vsplit<CR>
+
+" session management
+nnoremap <leader>so :OpenSession<Space>
+nnoremap <leader>ss :SaveSession<Space>
+nnoremap <leader>sd :DeleteSession<CR>
+nnoremap <leader>sc :CloseSession<CR>
