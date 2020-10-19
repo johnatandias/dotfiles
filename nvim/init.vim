@@ -12,6 +12,9 @@ call plug#begin()
   Plug 'norcalli/nvim-colorizer.lua'
   Plug 'johnatandias/vim-monokai-bold'
 
+  " Integrations
+  Plug 'benmills/vimux'
+
   " Multiples cursors
   Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
