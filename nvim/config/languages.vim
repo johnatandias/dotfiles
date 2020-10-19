@@ -14,12 +14,16 @@ autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 " Javascript
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_ngdoc = 1
+hi link javaScriptNumber Number 
 
 " TypeScript
 let g:yats_host_keyword = 1
 
 " JSX
 let g:vim_jsx_pretty_colorful_config = 1
+
+" TSX
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
 
 " i3
 aug i3config_ft_detection
