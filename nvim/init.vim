@@ -64,6 +64,10 @@ call plug#begin()
   Plug 'tpope/vim-fugitive'
   Plug 'airblade/vim-gitgutter'
   Plug 'rhysd/git-messenger.vim'
+ 
+  " Sessions
+  Plug 'xolox/vim-misc'
+  Plug 'xolox/vim-session'
 call plug#end()
 
 source $HOME/.dotfiles/nvim/config/ale.vim
