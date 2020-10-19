@@ -18,6 +18,12 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
+" Remap autocomplete
+inoremap <expr> <TAB> pumvisible() ? "\<C-y>" : "\<TAB>"
+inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
+inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<Down>"
+inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<Up>"
+
 " Split and tab variations.
 nmap <silent> <leader>gd :call CocAction('jumpDefinition', 'vsplit')<cr>
 nmap <silent> <leader>tgd :call CocAction('jumpDefinition', 'tabe')<cr>
