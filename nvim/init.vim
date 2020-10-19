@@ -55,7 +55,7 @@ call plug#begin()
   Plug 'neoclide/vim-jsx-improve'
   Plug 'othree/html5.vim'
   Plug 'jelera/vim-javascript-syntax'
-  Plug 'leafgarland/typescript-vim' 
+  Plug 'leafgarland/typescript-vim'
   Plug 'peitalin/vim-jsx-typescript'
 
   " Debugging
@@ -67,7 +67,7 @@ call plug#begin()
   Plug 'tpope/vim-fugitive'
   Plug 'airblade/vim-gitgutter'
   Plug 'rhysd/git-messenger.vim'
- 
+
   " Sessions
   Plug 'xolox/vim-misc'
   Plug 'xolox/vim-session'
@@ -84,5 +84,6 @@ source $HOME/.dotfiles/nvim/config/languages.vim
 source $HOME/.dotfiles/nvim/config/lightline.vim
 source $HOME/.dotfiles/nvim/config/nerdcommenter.vim
 source $HOME/.dotfiles/nvim/config/rainbow.vim
+source $HOME/.dotfiles/nvim/config/sessions.vim
 source $HOME/.dotfiles/nvim/config/vim_buffet.vim
 source $HOME/.dotfiles/nvim/config/theme.vim
