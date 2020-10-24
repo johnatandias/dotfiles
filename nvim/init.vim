@@ -11,6 +11,7 @@ call plug#begin()
 
   " Integrations
   Plug 'benmills/vimux'
+  Plug 'voldikss/vim-floaterm'
 
   " Multiples cursors
   Plug 'mg979/vim-visual-multi', {'branch': 'master'}
@@ -71,6 +72,7 @@ call plug#end()
 source $HOME/.dotfiles/nvim/config/ale.vim
 source $HOME/.dotfiles/nvim/config/coc.vim
 source $HOME/.dotfiles/nvim/config/commentary.vim
+source $HOME/.dotfiles/nvim/config/floaterm.vim
 source $HOME/.dotfiles/nvim/config/fzf.vim
 source $HOME/.dotfiles/nvim/config/general.vim
 source $HOME/.dotfiles/nvim/config/git.vim
