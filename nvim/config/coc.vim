@@ -1,7 +1,7 @@
-let g:coc_global_extensions = [ 
-  \ 'coc-tsserver', 
+let g:coc_global_extensions = [
+  \ 'coc-tsserver',
   \ 'coc-snippets',
-  \ 'coc-prettier', 
+  \ 'coc-prettier',
   \ 'coc-pairs',
   \ 'coc-highlight',
   \ 'coc-explorer',
@@ -24,6 +24,7 @@ inoremap <expr> <TAB> pumvisible() ? "\<C-y>" : "\<TAB>"
 inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
 inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<Down>"
 inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<Up>"
+inoremap <expr> <Space> pumvisible() ? neocomplete#close_popup() . "\<Space>" : "\<Space>"
 
 " Split and tab variations.
 nmap <silent> <leader>gd :call CocAction('jumpDefinition', 'vsplit')<cr>
@@ -55,7 +56,7 @@ autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | end
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 autocmd ColorScheme *
-      \ hi CocHighlightText ctermbg=242 guibg=#404040
+      \ hi CocHighlightText guibg=#404040
       \ | hi CocErrorHighlight guibg=#802020
       \ | hi CocWarningHighlight guibg=#806022
       \ | hi CocInfoHighlight guibg=#806022
