@@ -43,6 +43,7 @@ alias paste='xclip -selection c -o'
 alias tx='tmuxinator'
 alias vf='vifm'
 alias calendar='cal'
+alias lg='lazygit'
 eval $(thefuck --alias fix)
 
 # Changing "ls" to "exa"
