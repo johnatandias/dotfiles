@@ -1,4 +1,5 @@
 set number relativenumber
+set numberwidth=1
 set hidden
 set mouse=a
 set inccommand=split
@@ -8,6 +9,7 @@ set sw=2
 set nowrap
 set encoding=utf8
 set autoindent
+set smartindent
 set copyindent
 set incsearch
 set hlsearch
@@ -20,6 +22,9 @@ set autoread
 set updatetime=300
 set shell=/usr/bin/zsh
 set history=10000
+set backspace=indent,eol,start
+set showcmd
+set ruler
 
 cnoreabbrev W! w!
 cnoreabbrev Q! q!
@@ -31,6 +36,7 @@ cnoreabbrev WQ wq
 cnoreabbrev W w
 cnoreabbrev Q q
 cnoreabbrev Qall qall
+cnoreabbrev E e
 
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
