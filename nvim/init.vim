@@ -1,16 +1,13 @@
 call plug#begin()
   " Themes and customizations
-  Plug 'bignimbus/pop-punk.vim'
   Plug 'itchyny/lightline.vim'
   Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'ryanoasis/vim-devicons'
   Plug 'luochen1990/rainbow'
-  Plug 'morhetz/gruvbox'
   Plug 'bagrat/vim-buffet'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
-  Plug 'norcalli/nvim-colorizer.lua'
-  Plug 'johnatandias/vim-monokai-bold'
+  Plug 'srcery-colors/srcery-vim'
 
   " Integrations
   Plug 'benmills/vimux'
@@ -55,8 +52,6 @@ call plug#begin()
   Plug 'neoclide/vim-jsx-improve'
   Plug 'othree/html5.vim'
   Plug 'jelera/vim-javascript-syntax'
-  Plug 'leafgarland/typescript-vim'
-  Plug 'peitalin/vim-jsx-typescript'
 
   " Debugging
   Plug 'puremourning/vimspector', { 'do': 'nvm install --lts 10; nvm use --lts 10; ./install_gadget.py --force-enable-node' }
