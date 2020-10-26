@@ -8,6 +8,7 @@ call plug#begin()
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'srcery-colors/srcery-vim'
+  Plug 'mhinz/vim-startify'
 
   " Integrations
   Plug 'benmills/vimux'
@@ -83,5 +84,6 @@ source $HOME/.dotfiles/nvim/config/lightline.vim
 source $HOME/.dotfiles/nvim/config/nerdcommenter.vim
 source $HOME/.dotfiles/nvim/config/rainbow.vim
 source $HOME/.dotfiles/nvim/config/sessions.vim
+source $HOME/.dotfiles/nvim/config/startify.vim
 source $HOME/.dotfiles/nvim/config/vim_buffet.vim
 source $HOME/.dotfiles/nvim/config/theme.vim
