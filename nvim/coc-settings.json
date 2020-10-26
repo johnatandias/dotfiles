@@ -28,6 +28,7 @@
   "explorer.previewAction.onHover": false,
   "explorer.file.column.git.showIgnored": true,
   "explorer.quitOnOpen": true,
+  "explorer.openAction.for.directory": "expandOrCollapse",
   "explorer.icon.customIcons": {
     "icons": {
       "npm": {
@@ -92,7 +93,8 @@
     }
   },
   "explorer.keyMappings": {
-    "o": ["expanded?", "collapse", "expand"],
+    "<cr>": ["expandable?", ["expanded?", "collapse", "expand"], "open"],
+
     "v": "open:vsplit",
 
     "y": "copyFilepath",
