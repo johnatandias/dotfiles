@@ -23,7 +23,9 @@ nmap <silent> gr <Plug>(coc-references)
 inoremap <expr> <TAB> pumvisible() ? "\<C-y>" : "\<TAB>"
 inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
 inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<Down>"
+inoremap <expr> <C-j> pumvisible() ? "\<C-N>" : "\<C-j>"
 inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<Up>"
+inoremap <expr> <C-k> pumvisible() ? "\<C-P>" : "\<C-k>"
 inoremap <expr> <Space> pumvisible() ? neocomplete#close_popup() . "\<Space>" : "\<Space>"
 
 " Split and tab variations.
