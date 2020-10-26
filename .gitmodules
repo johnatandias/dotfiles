@@ -1,3 +1,6 @@
 [submodule "i3/scripts"]
 	path = i3/scripts
 	url = git@github.com:johnatandias/i3scripts.git
+[submodule "tmux-themepack"]
+	path = tmux-themepack
+	url = https://github.com/jimeh/tmux-themepack.git
