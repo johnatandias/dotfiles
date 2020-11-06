@@ -12,7 +12,7 @@ nnoremap <silent><M-Right> :bnext<CR>
 nnoremap <silent><M-Down> :bp<bar>sp<bar>bn<bar>bd<CR>
 
 " Tagbar
-map <C-m> :TagbarToggle<CR>
+nmap <F8> :TagbarToggle<CR>
 
 " Move select lines to up or down
 nnoremap <M-j> ddp
