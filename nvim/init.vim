@@ -9,6 +9,7 @@ call plug#begin()
   Plug 'vim-airline/vim-airline-themes'
   Plug 'srcery-colors/srcery-vim'
   Plug 'mhinz/vim-startify'
+  Plug 'Yggdroot/indentLine'
 
   " Integrations
   Plug 'benmills/vimux'
@@ -46,15 +47,18 @@ call plug#begin()
   Plug 'tpope/vim-markdown'
   Plug 'jtratner/vim-flavored-markdown'
   Plug 'mustache/vim-mustache-handlebars'
-  Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+  Plug 'styled-components/vim-styled-components'
   Plug 'maxmellon/vim-jsx-pretty'
   Plug 'pangloss/vim-javascript'
   Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
   Plug 'othree/yajs.vim'
-  Plug 'HerringtonDarkholme/yats.vim'
+  Plug 'herringtondarkholme/yats.vim'
   Plug 'neoclide/vim-jsx-improve'
   Plug 'othree/html5.vim'
   Plug 'jelera/vim-javascript-syntax'
+  Plug 'leafgarland/typescript-vim'
+  Plug 'peitalin/vim-jsx-typescript'
+  Plug 'elzr/vim-json'
 
   " Debugging
   Plug 'puremourning/vimspector', { 'do': 'nvm install --lts 10; nvm use --lts 10; ./install_gadget.py --force-enable-node' }
