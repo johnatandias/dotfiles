@@ -92,7 +92,7 @@
       ".github": "github"
     }
   },
-  "explorer.keyMappings": {
+  "explorer.keyMappings.global": {
     "<cr>": ["expandable?", ["expanded?", "collapse", "expand"], "open"],
 
     "v": "open:vsplit",

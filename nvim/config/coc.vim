@@ -26,7 +26,17 @@ inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<Down>"
 inoremap <expr> <C-j> pumvisible() ? "\<C-N>" : "\<C-j>"
 inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<Up>"
 inoremap <expr> <C-k> pumvisible() ? "\<C-P>" : "\<C-k>"
+inoremap <expr> <CR>  pumvisible() ? "\<C-y>" : "\<CR>"
 inoremap <expr> <Space> pumvisible() ? neocomplete#close_popup() . "\<Space>" : "\<Space>"
+inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+inoremap <silent><expr> <c-space> coc#refresh()
 
 " Split and tab variations.
 nmap <silent> <leader>gd :call CocAction('jumpDefinition', 'vsplit')<cr>
@@ -54,6 +64,8 @@ command! -nargs=0 Format :call CocAction('format')
 " (CTRL-B) open coc explorer
 nnoremap <silent><C-b> :CocCommand explorer --toggle --sources=buffer+,file+<CR>
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
+autocmd FileType coc-explorer set relativenumber
+autocmd FileType coc-explorer IndentLinesDisable 
 
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
