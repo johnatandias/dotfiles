@@ -30,3 +30,13 @@ aug i3config_ft_detection
   au!
   au BufNewFile,BufRead ~/.dotfiles/i3/config set filetype=i3config
 aug end
+
+function! UnMinify()
+    %s/{\ze[^\r\n]/{\r/g
+    %s/){/) {/g
+    %s/};\?\ze[^\r\n]/\0\r/g
+    %s/;\ze[^\r\n]/;\r/g
+    %s/[^\s]\zs[=&|]\+\ze[^\s]/ \0 /g
+    normal ggVG=
+endfunction
+command! UnMinify call UnMinify()
