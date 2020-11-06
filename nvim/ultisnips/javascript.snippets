@@ -1,13 +1,29 @@
-snippet csl "console.log()" b
-console.log(${1:'$2', $3});
+snippet csl "console.log('=>', {})" b
+console.log('=>', { $1 });
 endsnippet
 
-snippet csls "console.log(JSON.stringify({}, null, 2));" b
-console.log(JSON.stringify({ $2 }, null, 2));
+snippet csls "console.log('=>', JSON.stringify({}, null, 2));" b
+console.log('=>', JSON.stringify({ $2 }, null, 2));
 endsnippet
 
-snippet imp "import from ''" b
-import ${2:{ $3 }} from '$1';
+snippet imp "import { x } from 'y'" b
+import { $2 } from '$1';
+endsnippet
+
+snippet impd "import x from 'y'" b
+import $2 from '$1';
+endsnippet
+
+snippet impa "import * as x from 'y'" b
+import * as $2 from '$1';
+endsnippet
+
+snippet try "try/catch" b
+try {
+	$2
+} catch(error) {
+	console.log('=>', { error: error.message });$1
+}
 endsnippet
 
 snippet fn "() => {}" i
@@ -24,20 +40,20 @@ endsnippet
 
 snippet cf "() {}" b
 $1 ($2) {
-  $3
+	$3
 }
 endsnippet
 
 snippet it "it('', () => {})" b
 it('$1', () => {
-  $2
-})
+	$2
+});
 endsnippet
 
 snippet desc "describe('', () => {})" b
 describe('$1', () => {
-  $2
-})
+	$2
+});
 endsnippet
 
 snippet co "const = " b
@@ -46,13 +62,13 @@ endsnippet
 
 snippet obj "= {}" b
 const $1 = {
-  $2
+	$2
 }
 endsnippet
 
 snippet arr "= []" b
 const $1 = [
-  $2
+	$2
 ]
 endsnippet
 
@@ -65,10 +81,36 @@ import React from 'react'
 import { ${4} } from 'react-native'
 
 const $1 = ${2:( $3 )} => (
-  <$4>
-    $5
-  </$4>
+	<$4>
+		$5
+	</$4>
 )
 export default $1
+endsnippet
+
+snippet dev "process.env.NODE_ENV !== 'production'" w
+process.env.NODE_ENV !== 'production';
+endsnippet
+
+snippet prod "process.env.NODE_ENV === 'production'" w
+process.env.NODE_ENV === 'production';
+endsnippet
+
+snippet useS "useState" w
+const [$1, set$2] = useState($3)${0:;}
+endsnippet
+
+snippet useE "useEffect" w
+useEffect(() => {
+	$2
+}, [$1])${0:;}
+endsnippet
+
+snippet useC "useCallback" w
+const ${1:functionName} useCallback(() => {$3},[$2])${0:;}
+endsnippet
+
+snippet useR "useRef" w
+const $1 = useRef($2)${0:;}
 endsnippet
 
