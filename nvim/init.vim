@@ -78,6 +78,7 @@ call plug#end()
 source $HOME/.dotfiles/nvim/config/ale.vim
 source $HOME/.dotfiles/nvim/config/coc.vim
 source $HOME/.dotfiles/nvim/config/commentary.vim
+source $HOME/.dotfiles/nvim/config/deoplete.vim
 source $HOME/.dotfiles/nvim/config/floaterm.vim
 source $HOME/.dotfiles/nvim/config/fzf.vim
 source $HOME/.dotfiles/nvim/config/general.vim
