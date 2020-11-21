@@ -25,6 +25,7 @@ set history=10000
 set backspace=indent,eol,start
 set showcmd
 set ruler
+set completeopt=longest,menuone,preview
 
 cnoreabbrev W! w!
 cnoreabbrev Q! q!
