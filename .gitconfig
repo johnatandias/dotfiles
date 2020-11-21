@@ -3,14 +3,14 @@
 	email = johnatan.dias@gmail.com
 
 [core]
-	editor = code-insiders --wait
+	editor = code --wait
 	deltaBaseCacheLimit = 1G
 
 [diff]
   tool = vscode
 
 [difftool "vscode"]
-  cmd = code-insiders --wait --diff $LOCAL $REMOTE
+  cmd = code --wait --diff $LOCAL $REMOTE
 
 [pull]
 	rebase = true
