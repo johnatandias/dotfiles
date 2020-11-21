@@ -77,15 +77,15 @@ const { $1 } = $2
 endsnippet
 
 snippet rfc "React function component" b
-import React from 'react'
-import { ${4} } from 'react-native'
+import React from 'react';
 
-const $1 = ${2:( $3 )} => (
-	<$4>
-		$5
-	</$4>
-)
-export default $1
+const $1 = ${2:($3)} => {
+	return (
+		<$4>$1$5</$4>
+	)
+}
+
+export default $1;
 endsnippet
 
 snippet dev "process.env.NODE_ENV !== 'production'" w
@@ -97,7 +97,7 @@ process.env.NODE_ENV === 'production';
 endsnippet
 
 snippet useS "useState" w
-const [$1, set$2] = useState($3)${0:;}
+const [${1}, set${1/(^[a-zA-Z])(.*)/${1:/upcase}${2}/}] = useState($3);
 endsnippet
 
 snippet useE "useEffect" w
