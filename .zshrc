@@ -30,7 +30,6 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-alias code='code-insiders'
 alias vim='nvim'
 alias zs='source ~/.zshrc'
 alias ze='cd ~/.dotfiles && vim .zshrc'
