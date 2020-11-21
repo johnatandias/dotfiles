@@ -1,5 +1,13 @@
 {
   "tsserver.trace.server": "verbose",
+  "tsserver.log": "verbose",
+  "tsserver.enableJavascript": false,
+  "tsserver.implicitProjectConfig.checkJs": false,
+
+  "javascript.showUnused": true,
+
+  "diagnostic.refreshOnInsertMode": true,
+
   "coc.preferences.hoverTarget": "float",
   "coc.preferences.formatOnSaveFiletypes": [
     "javascript",
@@ -8,12 +16,16 @@
     "json",
     "javascriptreact"
   ],
+
+  "eslint.autoFixOnSave": true,
   "eslint.filetypes": [
     "javascript",
     "typescript",
     "typescriptreact",
     "javascriptreact"
   ],
+
+  "coc.source.ultisnips.enable": true,
   "snippets.ultisnips.directories": ["~/.dotfiles/nvim/ultisnips"],
   "snippets.extends": {
     "javascriptreact": ["javascript"],
@@ -21,7 +33,7 @@
     "typescript": ["javascript"],
     "typescript.tsx": ["javascript"]
   },
-  "coc.source.ultisnips.enable": true,
+
   "explorer.icon.enableNerdfont": true,
   "explorer.file.showHiddenFiles": true,
   "explorer.icon.enableVimDevicons": false,
