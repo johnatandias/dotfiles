@@ -11,15 +11,10 @@ set cursorline
 set background=dark
 set guifont=Fira\ Code\ Nerd\ Font
 syntax enable
+let g:srcery_transparent_background = 1
+let g:srcery_bold = 1
+let g:srcery_inverse = 0
+let g:srcery_dim_lisp_paren = 1
+set termguicolors
 colorscheme srcery
-
-hi! Normal ctermbg=NONE guibg=NONE
-hi! NonText ctermbg=NONE guibg=NONE
-hi! CursorLineNR ctermbg=NONE guibg=NONE
-hi! Comment ctermfg=Gray ctermbg=NONE guifg=NONE guibg=Gray
-hi! SignColumn ctermfg=Gray ctermbg=NONE guifg=Gray guibg=NONE
-hi! ColorColumn ctermbg=NONE guibg=lightgrey
-hi! LineNr ctermfg=Gray ctermbg=NONE guifg=Gray guibg=NONE
-hi! Search ctermfg=green ctermbg=black cterm=bold guifg=#bada55 guibg=NONE gui=bold
-
 autocmd ColorScheme * hi! link SignColumn LineNr
