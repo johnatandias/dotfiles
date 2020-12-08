@@ -40,3 +40,4 @@
 	update = remote update -p
 	rl = "reflog --date=iso"
 	branch-clear = "!git branch | grep -v '*' | grep -v 'master' | xargs git branch -D"
+	stash-staged = "!git stash -- $(git diff --staged --name-only)"
