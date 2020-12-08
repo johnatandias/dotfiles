@@ -1,4 +1,7 @@
-export TERM="xterm-256color"
+if [ "$TERM" = "xterm" ]; then
+  export TERM=xterm-256color
+fi
+
 export ZSH="/home/johnatan/.oh-my-zsh"
 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -26,9 +29,12 @@ plugins=(
   golang
   zsh-syntax-highlighting
   tmux
+  vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
+
+bindkey -v
 
 alias vim='nvim'
 alias zs='source ~/.zshrc'
@@ -43,6 +49,7 @@ alias tx='tmuxinator'
 alias vf='vifm'
 alias calendar='cal'
 alias lg='lazygit'
+alias tmux='tmux -2'
 eval $(thefuck --alias fix)
 
 # Changing "ls" to "exa"
