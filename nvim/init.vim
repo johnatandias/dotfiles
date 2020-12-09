@@ -7,9 +7,20 @@ call plug#begin()
   Plug 'bagrat/vim-buffet'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
-  Plug 'srcery-colors/srcery-vim'
-  Plug 'mhinz/vim-startify'
-  Plug 'Yggdroot/indentLine'
+
+  "Treesitter
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  Plug 'tree-sitter/tree-sitter-javascript'
+  Plug 'tree-sitter/tree-sitter-typescript'
+  Plug 'tree-sitter/tree-sitter-go'
+  Plug 'tree-sitter/tree-sitter-python'
+  Plug 'tree-sitter/tree-sitter-java'
+  Plug 'tree-sitter/tree-sitter-json'
+  Plug 'tree-sitter/tree-sitter-css'
+  Plug 'tree-sitter/tree-sitter-html'
+  Plug 'tree-sitter/tree-sitter-jsdoc'
+  Plug 'tree-sitter/tree-sitter-regex'
+  Plug 'ikatyang/tree-sitter-yaml'
 
   " Integrations
   Plug 'benmills/vimux'
@@ -42,23 +53,6 @@ call plug#begin()
 
   " Languages
   Plug 'sheerun/vim-polyglot'
-  Plug 'reedes/vim-pencil'
-  Plug 'tpope/vim-markdown'
-  Plug 'jtratner/vim-flavored-markdown'
-  Plug 'mustache/vim-mustache-handlebars'
-  Plug 'styled-components/vim-styled-components'
-  Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
-  Plug 'elzr/vim-json'
-  "" JavaScript/TypeScript
-  Plug 'othree/yajs.vim'
-  Plug 'maxmellon/vim-jsx-pretty'
-  Plug 'pangloss/vim-javascript'
-  Plug 'herringtondarkholme/yats.vim'
-  Plug 'neoclide/vim-jsx-improve'
-  Plug 'othree/html5.vim'
-  Plug 'jelera/vim-javascript-syntax'
-  Plug 'leafgarland/typescript-vim'
-  Plug 'peitalin/vim-jsx-typescript'
 
   " Debugging
   Plug 'puremourning/vimspector', { 'do': 'nvm install --lts 10; nvm use --lts 10; ./install_gadget.py --force-enable-node' }
@@ -91,4 +85,5 @@ source $HOME/.dotfiles/nvim/config/rainbow.vim
 source $HOME/.dotfiles/nvim/config/sessions.vim
 source $HOME/.dotfiles/nvim/config/startify.vim
 source $HOME/.dotfiles/nvim/config/vim_buffet.vim
+source $HOME/.dotfiles/nvim/config/treesitter.vim
 source $HOME/.dotfiles/nvim/config/theme.vim
