@@ -18,9 +18,23 @@ hi link javaScriptNumber Number
 
 " TypeScript
 let g:yats_host_keyword = 1
+autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 
 " JSX
+" let g:polyglot_disabled = ['jsx']
 let g:vim_jsx_pretty_colorful_config = 1
+let g:vim_jsx_pretty_highlight_close_tag = 1
+
+" JSON
+let g:vim_json_syntax_conceal = 0
+
+if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
+  let g:coc_global_extensions += ['coc-prettier']
+endif
+
+if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
+  let g:coc_global_extensions += ['coc-eslint']
+endif
 
 " i3
 aug i3config_ft_detection

@@ -19,13 +19,23 @@ set title
 set rtp+=~/.fzf
 set clipboard^=unnamed,unnamedplus
 set autoread
-set updatetime=300
+set updatetime=50
 set shell=/usr/bin/zsh
 set history=10000
 set backspace=indent,eol,start
 set showcmd
 set ruler
-set completeopt=longest,menuone,preview
+set completeopt=menuone,noinsert,noselect
+set shortmess+=c
+set ttyfast
+set textwidth=0
+set wrapmargin=0
+set wrap
+set linebreak
+set scrolloff=8
+
+au VimEnter * call matchadd('SpecialKey', '^\s\+', -1)
+au VimEnter * call matchadd('SpecialKey', '\s\+$', -1)
 
 cnoreabbrev W! w!
 cnoreabbrev Q! q!

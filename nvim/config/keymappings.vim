@@ -11,9 +11,6 @@ nnoremap <silent><M-Left> :bprev<CR>
 nnoremap <silent><M-Right> :bnext<CR>
 nnoremap <silent><M-Down> :bp<bar>sp<bar>bn<bar>bd<CR>
 
-" Tagbar
-nmap <F8> :TagbarToggle<CR>
-
 " Move select lines to up or down
 nnoremap <M-j> ddp
 nnoremap <M-k> ddkP
@@ -44,9 +41,12 @@ nmap <leader>gm :GitMessenger<esc>
 nmap <leader>vs :source $HOME/.dotfiles/nvim/init.vim<CR>
 
 " Identify the syntax highlighting group used at the cursor
-map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+nnoremap <f9> :echo synIDattr(synID(line('.'), col('.'), 0), 'name')<cr>
+nnoremap <f10> :echo ("hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">")<cr>
+nnoremap <f11> :echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')<cr>
+nnoremap <f12> :exec 'syn list '.synIDattr(synID(line('.'), col('.'), 0), 'name')<cr>
 
 "" Split
 noremap <Leader>h :<C-u>split<CR>
@@ -57,3 +57,6 @@ nnoremap <leader>so :OpenSession<Space>
 nnoremap <leader>ss :SaveSession<Space>
 nnoremap <leader>sd :DeleteSession<CR>
 nnoremap <leader>sc :CloseSession<CR>
+
+" Prettier
+nnoremap <leader>p :Prettier<CR>
