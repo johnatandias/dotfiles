@@ -45,9 +45,6 @@ call plug#begin()
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
 
-  " Lint
-  Plug 'dense-analysis/ale'
-
   " Without comments :)
   Plug 'jiangmiao/auto-pairs'
   Plug 'editorconfig/editorconfig-vim'
@@ -56,7 +53,6 @@ call plug#begin()
   Plug 'metakirby5/codi.vim'
   Plug 'tpope/vim-commentary'
   Plug 'chrisbra/Colorizer'
-  Plug 'kamykn/spelunker.vim'
   Plug 'mboughaba/i3config.vim'
   Plug 'johngrib/vim-game-snake'
 
@@ -81,10 +77,9 @@ call plug#begin()
   Plug 'xolox/vim-session'
 call plug#end()
 
-source $HOME/.dotfiles/nvim/config/ale.vim
+source $HOME/.dotfiles/nvim/config/airline.vim
 source $HOME/.dotfiles/nvim/config/coc.vim
 source $HOME/.dotfiles/nvim/config/commentary.vim
-source $HOME/.dotfiles/nvim/config/deoplete.vim
 source $HOME/.dotfiles/nvim/config/floaterm.vim
 source $HOME/.dotfiles/nvim/config/fzf.vim
 source $HOME/.dotfiles/nvim/config/general.vim
@@ -92,7 +87,6 @@ source $HOME/.dotfiles/nvim/config/git.vim
 source $HOME/.dotfiles/nvim/config/keymappings.vim
 source $HOME/.dotfiles/nvim/config/languages.vim
 source $HOME/.dotfiles/nvim/config/lightline.vim
-source $HOME/.dotfiles/nvim/config/nerdcommenter.vim
 source $HOME/.dotfiles/nvim/config/rainbow.vim
 source $HOME/.dotfiles/nvim/config/sessions.vim
 source $HOME/.dotfiles/nvim/config/startify.vim
