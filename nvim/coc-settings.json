@@ -1,12 +1,22 @@
 {
   "tsserver.trace.server": "verbose",
   "tsserver.log": "verbose",
-  "tsserver.enableJavascript": false,
+  "tsserver.enableJavascript": true,
   "tsserver.implicitProjectConfig.checkJs": false,
 
   "javascript.showUnused": true,
 
+  "suggest.enablePreview": true,
+
+  "diagnostic.messageTarget": "float",
+  "diagnostic.virtualText": false,
   "diagnostic.refreshOnInsertMode": true,
+  "diagnostic.checkCurrentLine": false,
+  "diagnostic.maxWindowHeight": 20,
+  "diagnostic.errorSign": "✖",
+  "diagnostic.warningSign": "⚠",
+  "diagnostic.infoSign": "●",
+  "diagnostic.hintSign": "○",
 
   "coc.preferences.hoverTarget": "float",
   "coc.preferences.formatOnSaveFiletypes": [

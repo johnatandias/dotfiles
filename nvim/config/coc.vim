@@ -18,9 +18,13 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+nmap <silent> do <Plug>(coc-codeaction)
+nmap <silent> cd <Plug>(coc-diagnostic-info)
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " Remap autocomplete
-inoremap <expr> <TAB> pumvisible() ? "\<C-y>" : "\<TAB>"
+" inoremap <expr> <TAB> pumvisible() ? "\<C-y>" : "\<TAB>"
 inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
 inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<Down>"
 inoremap <expr> <Down> pumvisible() ? "\<C-n>" : "\<Down>"
@@ -30,8 +34,25 @@ inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<Up>"
 inoremap <expr> <C-k> pumvisible() ? "\<C-P>" : "\<C-k>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 inoremap <expr> <Space> pumvisible() ? neocomplete#close_popup() . "\<Space>" : "\<Space>"
-inoremap <silent> <expr> <TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : coc#refresh()
+" inoremap <silent> <expr> <TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : coc#refresh()
 inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+inoremap <silent> <expr> <cr> pumvisible() ? coc#_select_confirm()
+  \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+inoremap <silent> <expr> <TAB>
+  \ pumvisible() ? coc#_select_confirm() :
+  \ coc#expandableOrJumpable() ?
+  \ "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+  \ <SID>check_back_space() ? "\<TAB>" :
+  \ coc#refresh()
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+let g:coc_snippet_next = '<tab>'
 
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -70,10 +91,3 @@ autocmd FileType coc-explorer set relativenumber
 autocmd FileType coc-explorer IndentLinesDisable
 
 autocmd CursorHold * silent call CocActionAsync('highlight')
-
-autocmd ColorScheme *
-      \ hi CocHighlightText guibg=#404040
-      \ | hi CocErrorHighlight guibg=#802020
-      \ | hi CocWarningHighlight guibg=#806022
-      \ | hi CocInfoHighlight guibg=#806022
-      \ | hi CocHintHighlight guibg=#224290
