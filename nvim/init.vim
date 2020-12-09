@@ -1,10 +1,22 @@
 call plug#begin()
   " Themes and customizations
+  Plug 'srcery-colors/srcery-vim'
+  Plug 'christianchiarulli/nvcode-color-schemes.vim'
+
+  " Editor customizations
   Plug 'itchyny/lightline.vim'
-  Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'ryanoasis/vim-devicons'
   Plug 'luochen1990/rainbow'
   Plug 'bagrat/vim-buffet'
+  Plug 'mhinz/vim-startify'
+  Plug 'easymotion/vim-easymotion'
+  Plug 'Jorengarenar/vim-MvVis'
+
+  " Indent line
+  Plug 'Yggdroot/indentLine'
+  Plug 'lukas-reineke/indent-blankline.nvim'
+
+  " Airline
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
 
