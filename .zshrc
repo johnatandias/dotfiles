@@ -2,13 +2,13 @@ if [ "$TERM" = "xterm" ]; then
   export TERM=xterm-256color
 fi
 
-export ZSH="/home/johnatan/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-source ~/.dotfiles/.p10k.zsh
+source $HOME/.dotfiles/.p10k.zsh
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 plugins=(
@@ -50,6 +50,8 @@ alias vf='vifm'
 alias calendar='cal'
 alias lg='lazygit'
 alias tmux='tmux -2'
+alias ls-size='du -sh * | sort -rh'
+alias cls='clear'
 eval $(thefuck --alias fix)
 
 # Changing "ls" to "exa"

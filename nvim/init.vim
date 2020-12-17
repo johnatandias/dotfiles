@@ -21,7 +21,8 @@ call plug#begin()
   Plug 'vim-airline/vim-airline-themes'
 
   "Treesitter
-  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  Plug 'nvim-treesitter/nvim-treesitter'
+  Plug 'nvim-treesitter/nvim-treesitter-refactor'
   Plug 'tree-sitter/tree-sitter-javascript'
   Plug 'tree-sitter/tree-sitter-typescript'
   Plug 'tree-sitter/tree-sitter-go'
@@ -44,12 +45,13 @@ call plug#begin()
   " FZF
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
+  Plug 'stsewd/fzf-checkout.vim'
 
   " Without comments :)
   Plug 'jiangmiao/auto-pairs'
   Plug 'editorconfig/editorconfig-vim'
   Plug 'mattn/emmet-vim'
-  Plug 'wakatime/vim-wakatime'
+  " Plug 'wakatime/vim-wakatime'
   Plug 'metakirby5/codi.vim'
   Plug 'tpope/vim-commentary'
   Plug 'chrisbra/Colorizer'
@@ -61,6 +63,7 @@ call plug#begin()
 
   " Languages
   Plug 'sheerun/vim-polyglot'
+  Plug 'neovim/nvim-lspconfig'
 
   " Debugging
   Plug 'puremourning/vimspector', { 'do': 'nvm install --lts 10; nvm use --lts 10; ./install_gadget.py --force-enable-node' }

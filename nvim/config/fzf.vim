@@ -11,3 +11,6 @@ nnoremap <M-l> :bnext<CR>
 nnoremap <M-Down> :bdelete<CR>
 inoremap <M-Left> :bprev<CR>
 inoremap <M-Right> :bnext<CR>
+
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
+let $FZF_DEFAULT_OPTS = '--reverse'

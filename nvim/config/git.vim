@@ -15,3 +15,4 @@ nnoremap <leader>gb :Git branch<Space>
 nnoremap <leader>go :Git checkout<Space>
 nnoremap <leader>gps :Dispatch! git Push<CR>
 nnoremap <leader>gpl :Dispatch! git pull<CR>
+nnoremap <leader>gC :GCheckout<CR>

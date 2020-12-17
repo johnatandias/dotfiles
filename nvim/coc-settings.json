@@ -44,11 +44,14 @@
     "typescript.tsx": ["javascript"]
   },
 
+  "explorer.width": 46,
+  "explorer.contentWidth": 43,
+  "explorer.position": "right",
   "explorer.icon.enableNerdfont": true,
   "explorer.file.showHiddenFiles": true,
   "explorer.icon.enableVimDevicons": false,
   "explorer.previewAction.onHover": false,
-  "explorer.file.column.git.showIgnored": true,
+  "explorer.git.showIgnored": true,
   "explorer.quitOnOpen": true,
   "explorer.openAction.for.directory": "expandOrCollapse",
   "explorer.icon.customIcons": {

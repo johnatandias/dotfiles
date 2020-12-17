@@ -20,7 +20,6 @@ set rtp+=~/.fzf
 set clipboard^=unnamed,unnamedplus
 set autoread
 set updatetime=50
-set shell=/usr/bin/zsh
 set history=10000
 set backspace=indent,eol,start
 set showcmd
@@ -33,6 +32,25 @@ set wrapmargin=0
 set wrap
 set linebreak
 set scrolloff=8
+
+if has('unix')
+  if has('mac')
+    set shell=/bin/zsh
+    set nocursorline
+    set lazyredraw
+    set synmaxcol
+  else
+    set shell=/usr/bin/zsh
+  endif
+elseif has('win32') || has('win64')
+"
+endif
+
+" Fold
+set foldmethod=syntax
+set foldcolumn=1
+let javaScript_fold=1
+set foldlevelstart=99
 
 au VimEnter * call matchadd('SpecialKey', '^\s\+', -1)
 au VimEnter * call matchadd('SpecialKey', '\s\+$', -1)
