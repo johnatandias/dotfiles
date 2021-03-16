@@ -7,7 +7,9 @@ set et
 set ts=2
 set sw=2
 set nowrap
-set encoding=utf8
+set encoding=utf-8
+set fileencoding=utf-8
+set fileencodings=ucs-bom,utf8,latin1
 set autoindent
 set smartindent
 set copyindent
