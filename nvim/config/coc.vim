@@ -10,8 +10,11 @@ let g:coc_global_extensions = [
   \ 'coc-html',
   \ 'coc-css',
   \ 'coc-marketplace',
-  \ 'coc-ultisnips'
+  \ 'coc-ultisnips',
+  \ 'coc-styled-components'
 \ ]
+
+let g:coc_node_path = trim(system('which node'))
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)

@@ -28,12 +28,6 @@
   ],
 
   "eslint.autoFixOnSave": true,
-  "eslint.filetypes": [
-    "javascript",
-    "typescript",
-    "typescriptreact",
-    "javascriptreact"
-  ],
 
   "coc.source.ultisnips.enable": true,
   "snippets.ultisnips.directories": ["~/.dotfiles/nvim/ultisnips"],
@@ -102,7 +96,8 @@
       }
     },
     "extensions": {
-      "md": "markdown"
+      "md": "markdown",
+      "map": "javascript"
     },
     "filenames": {
       "bitbucket-pipelines.yml": "bitbucket",
