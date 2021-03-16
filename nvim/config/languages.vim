@@ -51,3 +51,9 @@ function! UnMinify()
     normal ggVG=
 endfunction
 command! UnMinify call UnMinify()
+
+" CSS
+augroup VimCSS3Syntax
+  autocmd!
+  autocmd FileType css setlocal iskeyword+=-
+augroup END

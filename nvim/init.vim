@@ -47,6 +47,7 @@ call plug#begin()
   Plug 'chrisbra/Colorizer'
   Plug 'mboughaba/i3config.vim'
   Plug 'johngrib/vim-game-snake'
+  Plug 'hail2u/vim-css3-syntax'
 
   " Autocomplete
   Plug 'neoclide/coc.nvim' , { 'branch' : 'release' }
