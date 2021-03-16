@@ -20,20 +20,10 @@ call plug#begin()
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
 
-  "Treesitter
-  Plug 'nvim-treesitter/nvim-treesitter'
-  Plug 'nvim-treesitter/nvim-treesitter-refactor'
-  Plug 'tree-sitter/tree-sitter-javascript'
-  Plug 'tree-sitter/tree-sitter-typescript'
-  Plug 'tree-sitter/tree-sitter-go'
-  Plug 'tree-sitter/tree-sitter-python'
-  Plug 'tree-sitter/tree-sitter-java'
-  Plug 'tree-sitter/tree-sitter-json'
-  Plug 'tree-sitter/tree-sitter-css'
-  Plug 'tree-sitter/tree-sitter-html'
-  Plug 'tree-sitter/tree-sitter-jsdoc'
-  Plug 'tree-sitter/tree-sitter-regex'
-  Plug 'ikatyang/tree-sitter-yaml'
+  " Treesitter
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+  Plug 'nvim-treesitter/playground'
 
   " Integrations
   Plug 'benmills/vimux'
