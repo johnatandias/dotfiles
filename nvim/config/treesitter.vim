@@ -1,6 +1,13 @@
 lua << EOF
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained",
+  settings = {
+    Lua = {
+      runtime = {
+        version = "LuaJIT"
+      }
+    }
+  },
+  ensure_installed = "typescript",
   highlight = {
     enable = true,
     disable = { "c", "rust" },
