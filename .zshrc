@@ -24,7 +24,6 @@ plugins+=(
   history
   jira
   node
-  npx
   vscode
   golang
   zsh-syntax-highlighting
