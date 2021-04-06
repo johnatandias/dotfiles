@@ -11,7 +11,7 @@ fi
 source $HOME/.dotfiles/.p10k.zsh
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-plugins=(
+plugins+=(
   git
   yarn
   nvm
@@ -29,7 +29,7 @@ plugins=(
   golang
   zsh-syntax-highlighting
   tmux
-  vi-mode
+  zsh-vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -95,6 +95,6 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="$PATH:$(yarn global bin)"
 
 # FZF
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+zvm_after_init_commands+=('[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh')
 
 export FZF_DEFAULT_COMMAND='rg --files --hidden -g "!.git" '
