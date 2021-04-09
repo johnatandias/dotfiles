@@ -15,17 +15,11 @@ plugins+=(
   git
   yarn
   nvm
-  adb
   battery
-  docker-compose
-  docker
   emoji
   gcloud
   history
-  jira
   node
-  vscode
-  golang
   zsh-syntax-highlighting
   tmux
   zsh-vi-mode
