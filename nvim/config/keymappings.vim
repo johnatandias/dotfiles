@@ -29,6 +29,7 @@ noremap <leader>/ :Commentary<esc>
 
 " ripgrep
 nmap <leader>f :Rg<esc>
+nnoremap <leader>ff :RgFiles<CR>
 
 " Git commits
 nmap <leader>gc :Commits<esc>
