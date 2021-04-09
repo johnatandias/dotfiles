@@ -67,6 +67,16 @@ nnoremap <leader>p :Prettier<CR>
 " Startify
 nnoremap <leader>s :Startify<CR>
 
+" Relative or absolute number lines
+function! NumberToggle()
+    if &relativenumber
+     set norelativenumber
+    else
+      set relativenumber
+    endif
+endfunction
+nnoremap <silent><leader>n :call NumberToggle()<CR>
+
 " Scroll
 " nnoremap <up> <c-y>
 " nnoremap <down> <c-e>
