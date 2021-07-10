@@ -5,12 +5,16 @@
 [core]
 	editor = code --wait
 	deltaBaseCacheLimit = 1G
+	pager = git-split-diffs --color | less -RFX
 
 [diff]
   tool = vscode
 
 [difftool "vscode"]
   cmd = code --wait --diff $LOCAL $REMOTE
+
+[split-diffs]
+  theme-name = github-dark-dim
 
 [pull]
 	rebase = true
