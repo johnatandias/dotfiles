@@ -14,7 +14,6 @@ call plug#begin()
 
   " Indent line
   Plug 'Yggdroot/indentLine'
-  Plug 'lukas-reineke/indent-blankline.nvim'
 
   " Airline
   Plug 'vim-airline/vim-airline'
