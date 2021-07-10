@@ -53,6 +53,7 @@ endfunction
 command! UnMinify call UnMinify()
 
 " CSS
+autocmd BufRead,BufEnter *.css setlocal foldmethod=marker
 augroup VimCSS3Syntax
   autocmd!
   autocmd FileType css setlocal iskeyword+=-
