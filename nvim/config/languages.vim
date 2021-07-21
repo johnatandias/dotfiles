@@ -15,10 +15,15 @@ autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_ngdoc = 1
 hi link javaScriptNumber Number
+au BufNewFile,BufRead *.es5        set filetype=javascript
+au BufNewFile,BufRead *.es6        set filetype=javascript
+au BufRead,BufNewFile *.hbs        set syntax=handlebars
+au BufRead,BufNewFile *.mustache   set filetype=mustache
+au BufRead,BufNewFile *.json       set filetype=json syntax=javascript
 
 " TypeScript
 let g:yats_host_keyword = 1
-autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
+autocmd BufNewFile,BufRead *.tsx   set filetype=typescript.tsx
 
 " JSX
 " let g:polyglot_disabled = ['jsx']
