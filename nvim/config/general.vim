@@ -34,6 +34,22 @@ set wrapmargin=0
 set wrap
 set linebreak
 set scrolloff=8
+set expandtab
+
+lang en_US
+" Set encoding.
+if has('multi_byte')
+  scriptencoding utf-8
+  set encoding=utf-8
+  set fileencodings=utf-8,cp932,sjis,utf-16le,euc-jp
+
+  if has("win32") || has("win64")
+    set termencoding=gbk
+  endif
+  if has("linux") || has("unix")
+    set termencoding=utf-8
+  endif
+endif
 
 if has('unix')
   if has('mac')
