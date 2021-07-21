@@ -6,6 +6,10 @@ nnoremap <leader>pi :PlugInstall<cr>
 noremap <C-s> :w<cr>
 nnoremap <c-p> :Files<cr>
 
+" gi moves to last insert mode (default)
+" gI moves to last modification
+nnoremap gI `.
+
 " Switch buffers with Alt left and right
 nnoremap <silent><M-Left> :bprev<CR>
 nnoremap <silent><M-Right> :bnext<CR>
