@@ -35,13 +35,18 @@
 	ac = !git add . && git commit
 	lg = log --graph --date=relative --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ad)%Creset'
 	last = for-each-ref --sort='-authordate:iso8601' --format=' %(authordate:relative)%09%(refname:short)' refs/heads
+	logline = log --oneline --stat --branches
 	amend = commit --amend --no-edit
 	compare = !git lg $1..$2 --no-merges
+	current-branch = rev-parse --abbrev-ref HEAD
 	clear = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d"
 	debug = !GIT_TRACE=1 git
 	search-my-commits = !git lg --author="johnatan.dias@gmail.com"
 	search-by-author = "!f() { git lg --author=$1; }; f"
 	update = remote update -p
+	unstage = reset -q HEAD --
+	uncommit = reset --mixed HEAD~
 	rl = "reflog --date=iso"
 	branch-clear = "!git branch | grep -v '*' | grep -v 'master' | xargs git branch -D"
 	stash-staged = "!git stash -- $(git diff --staged --name-only)"
+	push-upstream = "!git push -u origin $(git current-branch)"
