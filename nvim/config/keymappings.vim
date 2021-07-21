@@ -19,6 +19,9 @@ nnoremap <silent><C-Left> :bprev<CR>
 nnoremap <silent><C-Right> :bnext<CR>
 nnoremap <silent><C-Down> :bp<bar>sp<bar>bn<bar>bd<CR>
 
+" Close all the buffers.
+nnoremap <leader>cab :%bd <bar> Startify <cr>
+
 " Move select lines to up or down
 nnoremap <M-j> ddp
 nnoremap <M-k> ddkP
