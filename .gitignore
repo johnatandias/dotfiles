@@ -7,3 +7,8 @@ polybar/gh.token
 nvim/spell
 nvim/.netrwhist
 nvim/session
+get-token
+./nvim/language-tool
+.DS_Store
+language-tool
+plug.vim.old
