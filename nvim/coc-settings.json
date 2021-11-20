@@ -12,13 +12,11 @@
   "diagnostic.virtualText": false,
   "diagnostic.refreshOnInsertMode": true,
   "diagnostic.checkCurrentLine": false,
-  "diagnostic.maxWindowHeight": 20,
   "diagnostic.errorSign": "✖",
   "diagnostic.warningSign": "⚠",
   "diagnostic.infoSign": "●",
   "diagnostic.hintSign": "○",
 
-  "coc.preferences.hoverTarget": "float",
   "coc.preferences.formatOnSaveFiletypes": [
     "javascript",
     "typescript",
@@ -31,6 +29,7 @@
 
   "coc.source.ultisnips.enable": true,
   "snippets.ultisnips.directories": ["~/.dotfiles/nvim/ultisnips"],
+  "coc.source.ultisnips.filetypes": ["javascript", "typescript"],
   "snippets.extends": {
     "javascriptreact": ["javascript"],
     "typescriptreact": ["javascript"],
@@ -41,13 +40,14 @@
   "explorer.width": 46,
   "explorer.contentWidth": 43,
   "explorer.position": "right",
-  "explorer.icon.enableNerdfont": true,
   "explorer.file.showHiddenFiles": true,
-  "explorer.icon.enableVimDevicons": false,
+  "explorer.icon.enableNerdfont": true,
+  "explorer.icon.source": "builtin",
   "explorer.previewAction.onHover": false,
   "explorer.git.showIgnored": true,
   "explorer.quitOnOpen": true,
   "explorer.openAction.for.directory": "expandOrCollapse",
+  "explorer.openAction.relativePath": true,
   "explorer.icon.customIcons": {
     "icons": {
       "npm": {
