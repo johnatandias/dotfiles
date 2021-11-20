@@ -2,6 +2,7 @@ call plug#begin()
   " Themes and customizations
   Plug 'srcery-colors/srcery-vim'
   Plug 'christianchiarulli/nvcode-color-schemes.vim'
+  Plug 'kyazdani42/nvim-web-devicons'
 
   " Editor customizations
   Plug 'itchyny/lightline.vim'
@@ -11,6 +12,9 @@ call plug#begin()
   Plug 'mhinz/vim-startify'
   Plug 'easymotion/vim-easymotion'
   Plug 'Jorengarenar/vim-MvVis'
+  Plug 'rafamadriz/friendly-snippets'
+  Plug 'ray-x/lsp_signature.nvim'
+  Plug 'neovim/nvim-lspconfig'
 
   " Indent line
   Plug 'Yggdroot/indentLine'
@@ -54,6 +58,11 @@ call plug#begin()
   " Languages
   Plug 'sheerun/vim-polyglot'
   Plug 'neovim/nvim-lspconfig'
+  Plug 'dpelle/vim-LanguageTool'
+  Plug 'godlygeek/tabular'
+  Plug 'plasticboy/vim-markdown'
+  Plug 'Quramy/tsuquyomi'
+  Plug 'digitaltoad/vim-pug'
 
   " Debugging
   Plug 'puremourning/vimspector', { 'do': 'nvm install --lts 10; nvm use --lts 10; ./install_gadget.py --force-enable-node' }

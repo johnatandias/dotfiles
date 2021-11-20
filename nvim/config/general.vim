@@ -18,6 +18,7 @@ set hlsearch
 set wildmenu
 set confirm
 set title
+set titlestring=%t%(\ %M%)%(\ (%{expand(\"%:~:.:h\")})%)%(\ %a%)
 set rtp+=~/.fzf
 set clipboard^=unnamed,unnamedplus
 set autoread
@@ -35,6 +36,12 @@ set wrap
 set linebreak
 set scrolloff=8
 set expandtab
+set laststatus=2
+set noshowmode
+set tabpagemax=100
+set showtabline=2
+set signcolumn=yes
+let g:languagetool_jar='$HOME/.dotfiles/nvim/language-tool/LanguageTool-5.4/languagetool-commandline.jar'
 
 lang en_US
 " Set encoding.
@@ -56,7 +63,7 @@ if has('unix')
     set shell=/bin/zsh
     set nocursorline
     set lazyredraw
-    set synmaxcol
+    set synmaxcol=200
   else
     set shell=/usr/bin/zsh
   endif
@@ -85,11 +92,3 @@ cnoreabbrev Q q
 cnoreabbrev Qall qall
 cnoreabbrev E e
 
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved.
-if has("patch-8.1.1564")
-  " Recently vim can merge signcolumn and number column into one
-  set signcolumn=number
-else
-  set signcolumn=yes
-endif

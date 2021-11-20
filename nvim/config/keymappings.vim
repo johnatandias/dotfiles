@@ -10,6 +10,20 @@ nnoremap <c-p> :Files<cr>
 " gI moves to last modification
 nnoremap gI `.
 
+" Behave vim
+nnoremap Y y$
+
+" Keeping centered pointer
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
+
+" Undo break points
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
+inoremap ! !<c-g>u
+inoremap ? ?<c-g>u
+
 " Switch buffers with Alt left and right
 nnoremap <silent><M-Left> :bprev<CR>
 nnoremap <silent><M-Right> :bnext<CR>
@@ -20,13 +34,23 @@ nnoremap <silent><C-Right> :bnext<CR>
 nnoremap <silent><C-Down> :bp<bar>sp<bar>bn<bar>bd<CR>
 
 " Close all the buffers.
-nnoremap <leader>cab :%bd <bar> Startify <cr>
+nnoremap <leader>cab :SClose <cr>
 
 " Move select lines to up or down
-nnoremap <M-j> ddp
-nnoremap <M-k> ddkP
+nnoremap <M-j> :m .+1<CR>==
+nnoremap <M-k> :m .-2<CR>==
 vnoremap <M-j> :m '>+1<CR>gv=gv
 vnoremap <M-k> :m '<-2<CR>gv=gv
+inoremap <M-j> <esc>:m .+1<CR>==
+inoremap <M-k> <esc>:m .-2<CR>==
+
+" Add quotes around visual selection
+vnoremap " <esc>`>a"<esc>`<i"<esc>
+vnoremap ' <esc>`>a'<esc>`<i'<esc>
+vnoremap ( <esc>`>a)<esc>`<i(<esc>
+
+" Quickly clean up after searching/highlighting
+map <C-h> :noh<CR>
 
 " Copy selection to system clipboard
 vnoremap <leader>y "+y
@@ -35,16 +59,16 @@ vnoremap <leader>y "+y
 noremap <leader>/ :Commentary<esc>
 
 " ripgrep
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   "rg -g '!design/' -g '!{dist,build,lib,node_modules,.git}/*' -g '!{yarn.lock,package-lock.json}' --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1,
+  \   fzf#vim#with_preview({'options': '--exact --delimiter : --nth 4..'}), <bang>0)
 nmap <leader>f :Rg<esc>
 nnoremap <leader>ff :RgFiles<CR>
 
-" Git commits
+" Git
 nmap <leader>gc :Commits<esc>
-
-" Git commits for the current buffer
 nmap <leader>gh :BCommits<esc>
-
-" Show git commit message from the line
 nmap <leader>gm :GitMessenger<esc>
 
 " Source VIM settings
