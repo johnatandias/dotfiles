@@ -23,6 +23,7 @@ plugins+=(
   zsh-syntax-highlighting
   tmux
   zsh-vi-mode
+  kubectl
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -44,8 +45,8 @@ alias calendar='cal'
 alias lg='lazygit'
 alias tmux='tmux -2'
 alias ls-size='du -sh * | sort -rh'
-alias cls='clear'
-eval $(thefuck --alias fix)
+alias cls="clear && printf '\e[3J'"
+eval $(thefuck --alias)
 
 # Changing "ls" to "exa"
 alias ls='exa -a --color=always --group-directories-first' # my preferred listing
