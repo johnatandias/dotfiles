@@ -50,3 +50,7 @@
 	branch-clear = "!git branch | grep -v '*' | grep -v 'master' | xargs git branch -D"
 	stash-staged = "!git stash -- $(git diff --staged --name-only)"
 	push-upstream = "!git push -u origin $(git current-branch)"
+	count-by-author = shortlog -sn --all
+	prev = checkout HEAD^1
+	ahead = "!sh -c 'echo branch is $(git rev-list --count origin/master..HEAD) commits ahead master'"
+	behind = "!sh -c 'echo branch is $(git rev-list --count HEAD..origin/master) commits behind master'"
