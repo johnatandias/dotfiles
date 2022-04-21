@@ -14,7 +14,7 @@ call plug#begin()
   Plug 'Jorengarenar/vim-MvVis'
   Plug 'rafamadriz/friendly-snippets'
   Plug 'ray-x/lsp_signature.nvim'
-  Plug 'neovim/nvim-lspconfig'
+  Plug 'hoschi/yode-nvim'
 
   " Indent line
   Plug 'Yggdroot/indentLine'
@@ -95,3 +95,4 @@ source $HOME/.dotfiles/nvim/config/startify.vim
 source $HOME/.dotfiles/nvim/config/vim_buffet.vim
 source $HOME/.dotfiles/nvim/config/treesitter.vim
 source $HOME/.dotfiles/nvim/config/theme.vim
+source $HOME/.dotfiles/nvim/config/yode-nvim.vim
