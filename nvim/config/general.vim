@@ -7,7 +7,7 @@ set et
 set ts=2
 set sw=2
 set nowrap
-set encoding=utf-8
+set encoding=UTF-8
 set fileencoding=utf-8
 set fileencodings=ucs-bom,utf8,latin1
 set autoindent
@@ -20,7 +20,7 @@ set confirm
 set title
 set titlestring=%t%(\ %M%)%(\ (%{expand(\"%:~:.:h\")})%)%(\ %a%)
 set rtp+=~/.fzf
-set clipboard^=unnamed,unnamedplus
+set clipboard=unnamedplus
 set autoread
 set updatetime=50
 set history=10000
