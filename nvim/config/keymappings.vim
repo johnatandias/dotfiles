@@ -28,10 +28,12 @@ inoremap ? ?<c-g>u
 nnoremap <silent><M-Left> :bprev<CR>
 nnoremap <silent><M-Right> :bnext<CR>
 nnoremap <silent><M-Down> :bp<bar>sp<bar>bn<bar>bd<CR>
+nnoremap <silent><M-j> :bp<bar>sp<bar>bn<bar>bd<CR>
 
 nnoremap <silent><C-Left> :bprev<CR>
 nnoremap <silent><C-Right> :bnext<CR>
 nnoremap <silent><C-Down> :bp<bar>sp<bar>bn<bar>bd<CR>
+nnoremap <silent><C-j> :bp<bar>sp<bar>bn<bar>bd<CR>
 
 " Close all the buffers.
 nnoremap <leader>cab :SClose <cr>
