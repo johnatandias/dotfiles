@@ -3,17 +3,18 @@ call plug#begin()
   Plug 'srcery-colors/srcery-vim'
   Plug 'christianchiarulli/nvcode-color-schemes.vim'
   Plug 'kyazdani42/nvim-web-devicons'
+  Plug 'lambdalisue/glyph-palette.vim'
+  Plug 'ryanoasis/vim-devicons'
+  Plug 'lambdalisue/nerdfont.vim'
+  Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
+  Plug 'navarasu/onedark.nvim'
 
   " Editor customizations
   Plug 'itchyny/lightline.vim'
-  Plug 'ryanoasis/vim-devicons'
   Plug 'luochen1990/rainbow'
-  Plug 'bagrat/vim-buffet'
   Plug 'mhinz/vim-startify'
-  Plug 'easymotion/vim-easymotion'
-  Plug 'Jorengarenar/vim-MvVis'
-  Plug 'rafamadriz/friendly-snippets'
   Plug 'ray-x/lsp_signature.nvim'
+  Plug 'nvim-lua/plenary.nvim'
   Plug 'hoschi/yode-nvim'
 
   " Indent line
@@ -30,7 +31,6 @@ call plug#begin()
 
   " Integrations
   Plug 'benmills/vimux'
-  Plug 'voldikss/vim-floaterm'
 
   " Multiples cursors
   Plug 'mg979/vim-visual-multi', {'branch': 'master'}
@@ -48,8 +48,6 @@ call plug#begin()
   Plug 'metakirby5/codi.vim'
   Plug 'tpope/vim-commentary'
   Plug 'chrisbra/Colorizer'
-  Plug 'mboughaba/i3config.vim'
-  Plug 'johngrib/vim-game-snake'
   Plug 'hail2u/vim-css3-syntax'
 
   " Autocomplete
@@ -59,19 +57,9 @@ call plug#begin()
   Plug 'sheerun/vim-polyglot'
   Plug 'neovim/nvim-lspconfig'
   Plug 'dpelle/vim-LanguageTool'
-  Plug 'godlygeek/tabular'
-  Plug 'plasticboy/vim-markdown'
-  Plug 'Quramy/tsuquyomi'
-  Plug 'digitaltoad/vim-pug'
-
-  " Debugging
-  Plug 'puremourning/vimspector', { 'do': 'nvm install --lts 10; nvm use --lts 10; ./install_gadget.py --force-enable-node' }
+  " Plug 'Quramy/tsuquyomi'
 
   " Git
-  Plug 'kablamo/vim-git-log'
-  Plug 'gregsexton/gitv'
-  Plug 'tpope/vim-fugitive'
-  Plug 'airblade/vim-gitgutter'
   Plug 'rhysd/git-messenger.vim'
 
   " Sessions
