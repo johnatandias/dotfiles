@@ -30,7 +30,7 @@ source $ZSH/oh-my-zsh.sh
 
 bindkey -v
 
-alias vim='nvim'
+alias vim='lvim'
 alias zs='source ~/.zshrc'
 alias ze='cd ~/.dotfiles && vim .zshrc'
 alias ve='cd ~/.dotfiles/nvim && vim nvim/init.vim'

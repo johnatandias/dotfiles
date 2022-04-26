@@ -12,3 +12,4 @@ get-token
 .DS_Store
 language-tool
 plug.vim.old
+lvim/plugin
