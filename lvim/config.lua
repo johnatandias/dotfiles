@@ -45,9 +45,10 @@ lvim.keys.normal_mode["<Tab>"] = ":BufferLineCycleNext<CR>"
 -- Nvim Tree
 lvim.builtin.nvimtree.setup.view.side = "right"
 lvim.builtin.nvimtree.show_icons.git = 1
+lvim.builtin.nvimtree.setup.filters.custom = { "\\.cache" }
 
 -- Telescope
-lvim.builtin.telescope.defaults.file_ignore_patterns = { ".git", "node_modules" }
+lvim.builtin.telescope.defaults.file_ignore_patterns = { ".git" }
 
 -- Lualine
 lvim.builtin.lualine.sections.lualine_a = { 'mode' }
