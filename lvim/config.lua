@@ -23,6 +23,21 @@ opt.updatetime = 300
 opt.spell = false
 opt.spelllang = "en"
 
+-- Abbreviations
+vim.cmd([[
+cnoreabbrev W! w!
+cnoreabbrev Wa! wa!
+cnoreabbrev Wa wa
+cnoreabbrev Wq! wq!
+cnoreabbrev Wq wq
+cnoreabbrev Qa qa
+cnoreabbrev Qa! qa!
+cnoreabbrev X x
+cnoreabbrev W w
+cnoreabbrev Q q
+cnoreabbrev E e
+]])
+
 -- General
 lvim.log.level = "warn"
 lvim.format_on_save = { timeout = 10000 }
