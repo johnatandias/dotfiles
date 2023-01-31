@@ -1,0 +1,179 @@
+{
+  "csl": {
+    "prefix": "csl",
+    "body": [
+      "console.log('=>', { ${1:value} })"
+    ],
+    "description": "Add console log with prefix"
+  },
+  "csls": {
+    "prefix": "csls",
+    "body": [
+      "console.log('=>', JSON.stringify({ ${1:value} }, null, 2))"
+    ],
+    "description": "Add console log with prefix and stringify"
+  },
+  "imp": {
+    "prefix": "imp",
+    "body": [
+      "import { ${2:importModuleName} } from '${1:modulePath}'"
+    ],
+    "description": "Import named module"
+  },
+  "impd": {
+    "prefix": "impd",
+    "body": [
+      "import ${2:importName} from '${1:modulePath}'"
+    ],
+    "description": "Import default module"
+  },
+  "impa": {
+    "prefix": "impd",
+    "body": [
+      "import * as ${2:importName} from '${1:modulePath}'"
+    ],
+    "description": "Import all modules and convert in object"
+  },
+  "try": {
+    "prefix": "try",
+    "body": [
+      "try {",
+      "  $1",
+      "} catch (error) {",
+      "  console.log('=>', { error: error.message })",
+      "}"
+    ],
+    "description": "try/catch block"
+  },
+  "fn": {
+    "prefix": "fn",
+    "body": [
+      "const ${1:functionName} = () => {",
+      "  ${2:code}",
+      "}}"
+    ],
+    "description": "Add arrow function"
+  },
+  "afn": {
+    "prefix": "afn",
+    "body": [
+      "(() => {",
+      "  ${1:code}",
+      "})"
+    ],
+    "description": "Add autorun arrow function"
+  },
+  "it": {
+    "prefix": "it",
+    "body": [
+      "it('${1:testCaseName}', () => {",
+      "  ${2:code}",
+      "})"
+    ],
+    "description": "add jest test case"
+  },
+  "desc": {
+    "prefix": "desc",
+    "body": [
+      "describe('${1:suiteName}', () => {",
+      "  it('${2:testCaseName}', () => {",
+      "    ${3:code}",
+      "  })",
+      "})"
+    ],
+    "description": "add jest test suite"
+  },
+  "co": {
+    "prefix": "co",
+    "body": [
+      "const ${1:constantName} = ${2:value}"
+    ],
+    "description": "add constant"
+  },
+  "obj": {
+    "prefix": "obj",
+    "body": [
+      "const ${1:objectName} = {",
+      "  ${2:objectValue}",
+      "}"
+    ],
+    "description": "add an object"
+  },
+  "des": {
+    "prefix": "des",
+    "body": [
+      "const { ${2:deconstructionValue} } = ${1:objectName}"
+    ],
+    "description": "deconstruction value from object"
+  },
+  "arr": {
+    "prefix": "arr",
+    "body": [
+      "const ${1:constanteName} = [",
+      "  ${2:value}",
+      "]"
+    ],
+    "description": "add an array"
+  },
+  "rfc": {
+    "prefix": "rfc",
+    "body": [
+      "import React from 'react'",
+      "",
+      "type ${TM FILENAME BASE}Props = {",
+      "  ",
+      "}",
+      "",
+      "export const ${TM FILENAME BASE} = (props: ${TM FILENAME BASE}Props) => {",
+      "  return <>${1:code}</>",
+      "}"
+    ],
+    "description": "Create a React functional component with props"
+  },
+  "dev": {
+    "prefix": "dev",
+    "body": [
+      "process.env.NODE_ENV !== 'production'"
+    ],
+    "description": "process.env.NODE_ENV !== 'production'"
+  },
+  "prod": {
+    "prefix": "prod",
+    "body": [
+      "process.env.NODE_ENV === 'production'"
+    ],
+    "description": "process.env.NODE_ENV === 'production'"
+  },
+  "useS": {
+    "prefix": "useS",
+    "body": [
+      "const [$1, set${1/(\\w+)/${1:/capitalize}/}] = useState($2)"
+    ],
+    "description": "useState"
+  },
+  "useE": {
+    "prefix": "useE",
+    "body": [
+      "useEffect(() => {",
+      "  ${2: code here}",
+      "}, [${1: updateDependencies}])"
+    ],
+    "description": "useEffect"
+  },
+  "useC": {
+    "prefix": "useC",
+    "body": [
+      "const ${1:functionName} = useCallback(() => {",
+      "  $3",
+      "}, [${2: updateDependencies}])"
+    ],
+    "description": "useEffect"
+  },
+  "useR": {
+    "prefix": "useR",
+    "body": [
+      "const ${1: referenceName} = useRef(${2: initialValue})"
+    ],
+    "description": "useEffect"
+  }
+}

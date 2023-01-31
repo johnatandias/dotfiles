@@ -13,3 +13,4 @@ get-token
 language-tool
 plug.vim.old
 lvim/plugin
+lvim/spell
