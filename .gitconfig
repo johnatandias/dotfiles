@@ -8,13 +8,13 @@
 	pager = git-split-diffs --color | less -RFX
 
 [diff]
-  tool = vscode
+	tool = code
 
-[difftool "vscode"]
-  cmd = code --wait --diff $LOCAL $REMOTE
+[difftool "code"]
+	cmd = code --wait --diff $LOCAL $REMOTE
 
 [split-diffs]
-  theme-name = github-dark-dim
+	theme-name = github-dark-dim
 
 [pull]
 	rebase = true
@@ -34,23 +34,29 @@
 	b = branch
 	ac = !git add . && git commit
 	lg = log --graph --date=relative --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ad)%Creset'
+	l = lg
 	last = for-each-ref --sort='-authordate:iso8601' --format=' %(authordate:relative)%09%(refname:short)' refs/heads
 	logline = log --oneline --stat --branches
 	amend = commit --amend --no-edit
 	compare = !git lg $1..$2 --no-merges
 	current-branch = rev-parse --abbrev-ref HEAD
-	clear = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d"
+	clear = "!git branch --merged | grep -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d"
 	debug = !GIT_TRACE=1 git
 	search-my-commits = !git lg --author="johnatan.dias@gmail.com"
 	search-by-author = "!f() { git lg --author=$1; }; f"
 	update = remote update -p
 	unstage = reset -q HEAD --
-	uncommit = reset --mixed HEAD~
+  uncommit = reset --mixed HEAD~
+  delete-last-commit = reset --hard HEAD^
 	rl = "reflog --date=iso"
 	branch-clear = "!git branch | grep -v '*' | xargs git branch -D"
 	stash-staged = "!git stash -- $(git diff --staged --name-only)"
 	push-upstream = "!git push -u origin $(git current-branch)"
+	rebase-and-push = "!git rebase origin/$(git current-branch) $(git current-branch) && git push"
+	push-mete-o-loko = "!git push --force --no-verify"
+	push-passa-de-fininho = "!git push --no-verify"
 	count-by-author = shortlog -sn --all
 	prev = checkout HEAD^1
 	ahead = "!sh -c 'echo branch is $(git rev-list --count origin/master..HEAD) commits ahead master'"
 	behind = "!sh -c 'echo branch is $(git rev-list --count HEAD..origin/master) commits behind master'"
+	tag-list = for-each-ref --format '%(refname) %09 %(taggerdate) %(subject) %(authorname) %(taggeremail)' refs/tags --sort=taggerdate
