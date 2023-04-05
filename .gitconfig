@@ -5,7 +5,8 @@
 [core]
 	editor = code --wait
 	deltaBaseCacheLimit = 1G
-	pager = git-split-diffs --color | less -RFX
+  pager = git-split-diffs --color | less -RFX
+  ignorecase = false
 
 [diff]
 	tool = code
