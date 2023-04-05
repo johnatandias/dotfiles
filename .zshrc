@@ -1,29 +1,29 @@
+export PATH=/opt/homebrew/bin:$PATH
+
 if [ "$TERM" = "xterm" ]; then
   export TERM=xterm-256color
 fi
 
 export ZSH="$HOME/.oh-my-zsh"
 
+ZSH_THEME="flazz"
+
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 source $HOME/.dotfiles/.p10k.zsh
-ZSH_THEME="powerlevel10k/powerlevel9k"
+
+export NVM_LAZY_LOAD=true
+export NVM_COMPLETION=true
 
 plugins+=(
   git
   yarn
-  nvm
-  battery
   emoji
-  gcloud
   history
-  node
   zsh-syntax-highlighting
-  tmux
-  zsh-vi-mode
-  kubectl
+  fzf
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -68,6 +68,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 export PYTHON_BIN_PATH="$(python3 -m site --user-base)/bin"
 export PATH="$PATH:$PYTHON_BIN_PATH"
+PATH=$(pyenv root)/shims:$PATH
 
 # Java
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
@@ -88,7 +89,15 @@ export ANDROID_SDK_ROOT=$ANDROID_HOME/Sdk
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="$PATH:$(yarn global bin)"
 
+# LunarVim
+export PATH=$HOME/.local/bin:$PATH
+
 # FZF
 zvm_after_init_commands+=('[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh')
 
 export FZF_DEFAULT_COMMAND='rg --files --hidden -g "!.git" '
+
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
