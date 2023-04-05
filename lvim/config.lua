@@ -244,7 +244,7 @@ lvim.plugins = {
   },
   {
     "ThePrimeagen/refactoring.nvim",
-    requires = {
+    dependencies = {
       { "nvim-lua/plenary.nvim" },
       { "nvim-treesitter/nvim-treesitter" }
     }
@@ -267,7 +267,7 @@ lvim.plugins = {
   },
   {
     "sindrets/diffview.nvim",
-    requires = 'nvim-lua/plenary.nvim'
+    dependencies = 'nvim-lua/plenary.nvim'
   },
   {
     "f-person/git-blame.nvim",
