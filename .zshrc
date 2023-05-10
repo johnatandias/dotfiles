@@ -98,6 +98,8 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden -g "!.git" '
 
 export NODE_OPTIONS=--max_old_space_size=5000
 
+source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme
+
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
