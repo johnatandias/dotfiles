@@ -96,6 +96,8 @@ zvm_after_init_commands+=('[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh')
 
 export FZF_DEFAULT_COMMAND='rg --files --hidden -g "!.git" '
 
+export NODE_OPTIONS=--max_old_space_size=5000
+
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
