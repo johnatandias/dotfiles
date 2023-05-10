@@ -43,7 +43,6 @@ alias tx='tmuxinator'
 alias vf='vifm'
 alias calendar='cal'
 alias lg='lazygit'
-alias tmux='tmux -2'
 alias ls-size='du -sh * | sort -rh'
 alias cls="clear && printf '\e[3J'"
 eval $(thefuck --alias)
