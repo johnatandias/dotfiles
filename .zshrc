@@ -45,6 +45,9 @@ alias calendar='cal'
 alias lg='lazygit'
 alias ls-size='du -sh * | sort -rh'
 alias cls="clear && printf '\e[3J'"
+alias youtube-dl="/usr/local/bin/yt-dlp_macos"
+alias youtube-dl-audio="youtube-dl --extract-audio --audio-format wav --audio-quality 0"
+alias youtube-dl-audio-video="youtube-dl -f 'bestvideo[height<=?2160]+bestaudio/best'"
 eval $(thefuck --alias)
 
 # Changing "ls" to "exa"
