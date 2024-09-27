@@ -17,3 +17,8 @@ hs.hotkey.bind({"ctrl"}, "l", function()
   local key = hs.eventtap.event.newKeyEvent("right", true)
   key:post()
 end)
+
+hs.hotkey.bind({"shift"}, "escape", function()
+  local key = hs.eventtap.keyStroke({"alt"}, "n")
+  key:post()
+end)
