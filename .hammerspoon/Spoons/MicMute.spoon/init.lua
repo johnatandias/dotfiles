@@ -9,7 +9,7 @@ obj.__index = obj
 
 -- Metadata
 obj.name = "MicMute"
-obj.version = "1.0"
+obj.version = "1.1"
 obj.author = "dctucker <dctucker@github.com>"
 obj.homepage = "https://dctucker.com"
 obj.license = "MIT - https://opensource.org/licenses/MIT"
@@ -29,11 +29,15 @@ end
 --- Method
 --- Toggle mic mute on/off
 ---
+--- Parameters:
+---  * None
 function obj:toggleMicMute()
 	local mic = hs.audiodevice.defaultInputDevice()
 	local zoom = hs.application'Zoom'
+	local teams = hs.application.find("com.microsoft.teams")
+
 	if mic:muted() then
-		mic:setMuted(false)
+		mic:setInputMuted(false)
 		if zoom then
 			local ok = zoom:selectMenuItem'Unmute Audio'
 			if not ok then
@@ -42,13 +46,30 @@ function obj:toggleMicMute()
 				end)
 			end
 		end
+		if teams then
+			local ok = teams:selectMenuItem'Unmute'
+			if not ok then
+				hs.timer.doAfter(0.5, function()
+					hs.eventtap.keyStroke({"cmd","shift"}, "m", 0, teams)
+				end)
+			end
+		end
 	else
-		mic:setMuted(true)
+		mic:setInputMuted(true)
 		if zoom then
 			local ok = zoom:selectMenuItem'Mute Audio'
 			if not ok then
 				hs.timer.doAfter(0.5, function()
 					zoom:selectMenuItem'Mute Audio'
+				end)
+			end
+		end
+
+		if teams then
+			local ok = teams:selectMenuItem'Mute'
+			if not ok then
+				hs.timer.doAfter(0.5, function()
+					hs.eventtap.keyStroke({"cmd","shift"}, "m", 0, teams)
 				end)
 			end
 		end
