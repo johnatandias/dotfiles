@@ -1,0 +1,21 @@
+{
+  "mcpServers": {
+    "context7": {
+      "command": "/Users/johdias/.nvm/versions/node/v20.17.0/bin/npx",
+      "args": [
+        "-y",
+        "@upstash/context7-mcp"
+      ],
+      "env": {
+        "PATH": "/Users/johdias/.nvm/versions/node/v20.17.0/bin:/usr/bin:/bin",
+        "npm_config_registry": "https://registry.npmmirror.com/"
+      }
+    },
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "@playwright/mcp@latest"
+      ]
+    }
+  }
+}

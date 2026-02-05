@@ -1,0 +1,351 @@
+return {
+  {
+    "nvimdev/dashboard-nvim",
+    lazy = false,
+    opts = function()
+      local logo = [[
+
+
+                                        ▟▙
+                                        ▝▘
+██▃▅▇█▆▖  ▗▟████▙▖   ▄████▄   ██▄  ▄██  ██  ▗▟█▆▄▄▆█▙▖
+██▛▔ ▝██  ██▄▄▄▄██  ██▛▔▔▜██  ▝██  ██▘  ██  ██▛▜██▛▜██
+██    ██  ██▀▀▀▀▀▘  ██▖  ▗██   ▜█▙▟█▛   ██  ██  ██  ██
+██    ██  ▜█▙▄▄▄▟▊  ▀██▙▟██▀   ▝████▘   ██  ██  ██  ██
+▀▀    ▀▀   ▝▀▀▀▀▀     ▀▀▀▀       ▀▀     ▀▀  ▀▀  ▀▀  ▀▀
+      ]]
+
+      logo = string.rep("\n", 8) .. logo .. "\n\n"
+
+      local opts = {
+        theme = "doom",
+        hide = {
+          statusline = false,
+        },
+        config = {
+          header = vim.split(logo, "\n"),
+          center = {
+            { action = "Telescope find_files", desc = " Find File", icon = " ", key = "f" },
+            { action = "ene | startinsert", desc = " New File", icon = " ", key = "n" },
+            { action = "Telescope oldfiles", desc = " Recent Files", icon = " ", key = "r" },
+            { action = "Telescope live_grep", desc = " Find Text", icon = " ", key = "g" },
+            { action = "qa", desc = " Quit", icon = " ", key = "q" },
+          },
+          footer = function()
+            local stats = require("lazy").stats()
+            local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
+            return { "⚡ Neovim loaded " .. stats.loaded .. "/" .. stats.count .. " plugins in " .. ms .. "ms" }
+          end,
+        },
+      }
+
+      return opts
+    end,
+  },
+
+  {
+    "stevearc/conform.nvim",
+    -- event = 'BufWritePre', -- uncomment for format on save
+    opts = require "configs.conform",
+  },
+
+  {
+    "neovim/nvim-lspconfig",
+    config = function()
+      require "configs.lspconfig"
+    end,
+  },
+
+  {
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "typescript-language-server",
+        "html-lsp",
+        "css-lsp",
+      },
+    },
+  },
+
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    event = { "BufReadPost", "BufNewFile" },
+    cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
+    opts = {
+      ensure_installed = {
+        "vim",
+        "lua",
+        "vimdoc",
+        "html",
+        "css",
+        "javascript",
+        "typescript",
+        "tsx",
+        "json",
+      },
+      sync_install = false,
+      auto_install = true,
+      highlight = {
+        enable = true,
+        use_languagetree = true,
+        additional_vim_regex_highlighting = false,
+      },
+      indent = { enable = true },
+    },
+  },
+
+  {
+    "nvim-tree/nvim-web-devicons",
+    opts = {
+      override = {},
+      default = true,
+    },
+  },
+
+  {
+    "nvim-lua/plenary.nvim",
+    lazy = false,
+  },
+
+  {
+    "ravitemer/mcphub.nvim",
+    event = "VeryLazy",
+    opts = {
+      hub = {
+        enabled = true,
+        port = 3000,
+      },
+    },
+  },
+
+  {
+    "olimorris/codecompanion.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "ravitemer/mcphub.nvim",
+    },
+    cmd = {
+      "CodeCompanion",
+      "CodeCompanionChat",
+      "CodeCompanionActions",
+      "CodeCompanionToggle",
+    },
+    keys = {
+      { "<leader>cc", mode = { "n", "v" } },
+      { "<leader>ca", mode = { "n", "v" } },
+      { "<leader>ci", mode = { "n", "v" } },
+    },
+    config = function()
+      require "configs.codecompanion"
+    end,
+  },
+
+  {
+    "sphamba/smear-cursor.nvim",
+    opts = {
+      stiffness = 0.8,
+      trailing_stiffness = 0.6,
+      stiffness_insert_mode = 0.7,
+      trailing_stiffness_insert_mode = 0.7,
+      damping = 0.95,
+      damping_insert_mode = 0.95,
+      distance_stop_animating = 0.7,
+      time_interval = 5,
+      hide_target_hack = true,
+    },
+  },
+
+  {
+    "folke/sidekick.nvim",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+    },
+    opts = {
+      cli = {
+        watch = true,
+        mux = {
+          backend = "tmux",
+          enabled = true,
+          create = "terminal",
+        },
+        win = {
+          layout = "right",
+          split = {
+            width = 80,
+          },
+        },
+        tools = {
+          claude = {
+            cmd = { "claude" },
+          },
+          cursor = {
+            cmd = { "cursor-agent" },
+          },
+          codex = {
+            cmd = { "codex", "--enable", "web_search_request" },
+          },
+        },
+        prompts = {
+          changes = "Can you review my changes?",
+          diagnostics = "Can you help me fix the diagnostics in {file}?\n{diagnostics}",
+          explain = "Explain {this}",
+          fix = "Can you fix {this}?",
+          optimize = "How can {this} be optimized?",
+          review = "Can you review {file} for any issues or improvements?",
+          tests = "Can you write tests for {this}?",
+        },
+      },
+      nes = {
+        enabled = true,
+        debounce = 100,
+      },
+    },
+    keys = {
+      {
+        "<Tab>",
+        function()
+          if not require("sidekick").nes_jump_or_apply() then
+            return "<Tab>"
+          end
+        end,
+        expr = true,
+        mode = "n",
+        desc = "Goto/Apply Next Edit Suggestion",
+      },
+      {
+        "<C-a>",
+        function()
+          require("sidekick.cli").toggle()
+        end,
+        mode = { "n", "t", "i", "x" },
+        desc = "Sidekick Toggle CLI",
+      },
+      {
+        "<leader>aa",
+        function()
+          require("sidekick.cli").toggle()
+        end,
+        desc = "Sidekick Toggle CLI",
+      },
+      {
+        "<leader>as",
+        function()
+          require("sidekick.cli").select()
+        end,
+        desc = "Select CLI Tool",
+      },
+      {
+        "<leader>ac",
+        function()
+          require("sidekick.cli").toggle({ name = "claude", focus = true })
+        end,
+        desc = "Open Claude",
+      },
+      {
+        "<leader>au",
+        function()
+          require("sidekick.cli").toggle({ name = "cursor", focus = true })
+        end,
+        desc = "Open Cursor Agent",
+      },
+      {
+        "<leader>ax",
+        function()
+          require("sidekick.cli").toggle({ name = "codex", focus = true })
+        end,
+        desc = "Open Codex",
+      },
+      {
+        "<leader>ap",
+        function()
+          require("sidekick.cli").prompt()
+        end,
+        mode = { "n", "x" },
+        desc = "Select Prompt",
+      },
+      {
+        "<leader>at",
+        function()
+          require("sidekick.cli").send({ msg = "{this}" })
+        end,
+        mode = { "x", "n" },
+        desc = "Send This to CLI",
+      },
+      {
+        "<leader>af",
+        function()
+          require("sidekick.cli").send({ msg = "{file}" })
+        end,
+        desc = "Send File to CLI",
+      },
+      {
+        "<leader>av",
+        function()
+          require("sidekick.cli").send({ msg = "{selection}" })
+        end,
+        mode = { "x" },
+        desc = "Send Selection to CLI",
+      },
+    },
+  },
+
+  {
+    "folke/which-key.nvim",
+    opts = function(_, opts)
+      opts.spec = opts.spec or {}
+
+      vim.list_extend(opts.spec, {
+        { "<leader>a", group = "AI Agents" },
+        { "<leader>c", group = "AI Chat" },
+        { "<leader>m", group = "MCP Hub" },
+        { "<leader>s", group = "Sessions" },
+      })
+
+      return opts
+    end,
+  },
+
+  {
+    "rmagatti/auto-session",
+    lazy = false,
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+    },
+    opts = {
+      suppressed_dirs = { "~/", "~/Downloads", "/" },
+      auto_save = true,
+      auto_restore = false,
+      auto_create = true,
+      use_git_branch = false,
+      session_lens = {
+        load_on_setup = true,
+        theme_conf = { border = true },
+        previewer = false,
+      },
+    },
+    keys = {
+      {
+        "<leader>ss",
+        "<cmd>Telescope session-lens search_session<CR>",
+        desc = "Search Sessions",
+      },
+      {
+        "<leader>sr",
+        "<cmd>SessionRestore<CR>",
+        desc = "Restore Session",
+      },
+      {
+        "<leader>sd",
+        "<cmd>SessionDelete<CR>",
+        desc = "Delete Session",
+      },
+      {
+        "<leader>sw",
+        "<cmd>SessionSave<CR>",
+        desc = "Save Session",
+      },
+    },
+  },
+}

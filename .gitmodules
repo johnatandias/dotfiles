@@ -16,3 +16,6 @@
 [submodule "zsh-autosuggestions"]
 	path = zsh-autosuggestions
 	url = git@github.com:zsh-users/zsh-autosuggestions.git
+[submodule "nvchad"]
+	path = nvchad
+	url = git@github.com:NvChad/NvChad.git
