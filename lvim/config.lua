@@ -99,6 +99,13 @@ lvim.builtin.which_key.mappings["t"] = {
   r = { "<cmd>TroubleToggle lsp_references<cr>", "references" },
 }
 
+lvim.builtin.which_key.mappings["T"] = {
+  name = "+Terminal",
+  f = { "<cmd>ToggleTerm<cr>", "Floating terminal" },
+  v = { "<cmd>2ToggleTerm size=30 direction=vertical<cr>", "Split vertical" },
+  h = { "<cmd>2ToggleTerm size=30 direction=horizontal<cr>", "Split horizontal" },
+}
+
 -- Refactoring
 lvim.lsp.buffer_mappings.normal_mode["<leader>rb"] = {
   "<Cmd>lua require('refactoring').refactor('Extract Block')<CR>",
@@ -173,8 +180,7 @@ lvim.builtin.treesitter.ensure_installed = {
   "css",
   "rust",
   "java",
-  "yaml",
-  "help",
+  "yaml"
 }
 
 -- Formatters
@@ -187,10 +193,12 @@ local jsFileTypes = {
 
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
-  {
-    command = "eslint_d",
-    filetypes = jsFileTypes,
-  },
+  -- NOTE: eslint_d was removed from none-ls.nvim
+  -- Use eslint LSP server instead or install eslint_d as a separate LSP
+  -- {
+  --   command = "eslint_d",
+  --   filetypes = jsFileTypes,
+  -- },
   {
     command = "black",
     filetypes = { "python" }
@@ -204,14 +212,18 @@ formatters.setup {
 -- Linters
 local linters = require "lvim.lsp.null-ls.linters"
 linters.setup {
-  {
-    command = "eslint_d",
-    filetypes = jsFileTypes,
-  },
-  {
-    command = "flake8",
-    filetypes = { "python" }
-  },
+  -- NOTE: eslint_d was removed from none-ls.nvim
+  -- Use eslint LSP server instead
+  -- {
+  --   command = "eslint_d",
+  --   filetypes = jsFileTypes,
+  -- },
+  -- NOTE: flake8 was removed from none-ls.nvim
+  -- Use ruff or pylint instead, or install flake8 via pylsp
+  -- {
+  --   command = "flake8",
+  --   filetypes = { "python" }
+  -- },
 }
 
 local code_actions = require "lvim.lsp.null-ls.code_actions"
@@ -223,9 +235,11 @@ code_actions.setup {
   {
     command = "refactoring"
   },
-  {
-    command = "shellcheck"
-  },
+  -- NOTE: shellcheck code_actions was removed from none-ls.nvim
+  -- Use shellcheck via bashls LSP server instead
+  -- {
+  --   command = "shellcheck"
+  -- },
 }
 
 -- Additional Plugins
@@ -236,9 +250,9 @@ lvim.plugins = {
   {
     "jiangmiao/auto-pairs",
   },
-  {
-    "p00f/nvim-ts-rainbow",
-  },
+  -- {
+  -- "p00f/nvim-ts-rainbow",
+  -- },
   {
     "editorconfig/editorconfig-vim"
   },
