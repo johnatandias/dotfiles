@@ -119,28 +119,28 @@ return {
     },
   },
 
-  {
-    "olimorris/codecompanion.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-treesitter/nvim-treesitter",
-      "ravitemer/mcphub.nvim",
-    },
-    cmd = {
-      "CodeCompanion",
-      "CodeCompanionChat",
-      "CodeCompanionActions",
-      "CodeCompanionToggle",
-    },
-    keys = {
-      { "<leader>cc", mode = { "n", "v" } },
-      { "<leader>ca", mode = { "n", "v" } },
-      { "<leader>ci", mode = { "n", "v" } },
-    },
-    config = function()
-      require "configs.codecompanion"
-    end,
-  },
+  -- {
+  --   "olimorris/codecompanion.nvim",
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim",
+  --     "nvim-treesitter/nvim-treesitter",
+  --     "ravitemer/mcphub.nvim",
+  --   },
+  --   cmd = {
+  --     "CodeCompanion",
+  --     "CodeCompanionChat",
+  --     "CodeCompanionActions",
+  --     "CodeCompanionToggle",
+  --   },
+  --   keys = {
+  --     { "<leader>cc", mode = { "n", "v" } },
+  --     { "<leader>ca", mode = { "n", "v" } },
+  --     { "<leader>ci", mode = { "n", "v" } },
+  --   },
+  --   config = function()
+  --     require "configs.codecompanion"
+  --   end,
+  -- },
 
   {
     "sphamba/smear-cursor.nvim",
@@ -299,7 +299,8 @@ return {
       vim.list_extend(opts.spec, {
         { "<leader>a", group = "AI Agents" },
         { "<leader>c", group = "AI Chat" },
-        { "<leader>m", group = "MCP Hub" },
+        { "<leader>g", group = "Git" },
+        { "<leader>m", group = "Markdown/MCP" },
         { "<leader>s", group = "Sessions" },
       })
 
@@ -347,5 +348,69 @@ return {
         desc = "Save Session",
       },
     },
+  },
+
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = "cd app && npm install",
+    init = function()
+      vim.g.mkdp_filetypes = { "markdown" }
+    end,
+    config = function()
+      vim.g.mkdp_auto_start = 0
+      vim.g.mkdp_auto_close = 1
+      vim.g.mkdp_refresh_slow = 0
+      vim.g.mkdp_command_for_global = 0
+      vim.g.mkdp_open_to_the_world = 0
+      vim.g.mkdp_open_ip = ""
+      vim.g.mkdp_browser = ""
+      vim.g.mkdp_echo_preview_url = 0
+      vim.g.mkdp_browserfunc = ""
+      vim.g.mkdp_preview_options = {
+        mkit = {},
+        katex = {},
+        uml = {},
+        maid = {},
+        disable_sync_scroll = 0,
+        sync_scroll_type = "middle",
+        hide_yaml_meta = 1,
+        sequence_diagrams = {},
+        flowchart_diagrams = {},
+        content_editable = false,
+        disable_filename = 0,
+        toc = {},
+      }
+      vim.g.mkdp_markdown_css = ""
+      vim.g.mkdp_highlight_css = ""
+      vim.g.mkdp_port = ""
+      vim.g.mkdp_page_title = "「${name}」"
+      vim.g.mkdp_filetypes = { "markdown" }
+      vim.g.mkdp_theme = "dark"
+    end,
+  },
+
+  {
+    "kdheepak/lazygit.nvim",
+    cmd = {
+      "LazyGit",
+      "LazyGitConfig",
+      "LazyGitCurrentFile",
+      "LazyGitFilter",
+      "LazyGitFilterCurrentFile",
+    },
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+    },
+    keys = {
+      { "<leader>gg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
+      { "<leader>gf", "<cmd>LazyGitCurrentFile<cr>", desc = "LazyGit Current File" },
+      { "<leader>gl", "<cmd>LazyGitFilter<cr>", desc = "LazyGit Commits" },
+    },
+    config = function()
+      require("telescope").load_extension("lazygit")
+    end,
   },
 }
