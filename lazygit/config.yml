@@ -1,0 +1,4 @@
+git:
+  pagers:
+    - pager: "env COLUMNS={{columnWidth}} LINES=50 FORCE_COLOR=3 git-split-diffs --color=16m"
+      colorArg: always
