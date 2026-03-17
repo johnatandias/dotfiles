@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(nvim:*)",
+      "Bash(git fetch:*)",
+      "Bash(git checkout:*)",
+      "Bash(git pull:*)",
+      "Bash(which gh:*)",
+      "Bash(brew install:*)",
+      "Bash(arch:*)",
+      "Bash(gh repo:*)",
+      "Bash(gh pr:*)",
+      "WebFetch(domain:github.com)",
+      "Bash(ls:*)"
+    ]
+  }
+}
