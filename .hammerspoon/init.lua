@@ -1,4 +1,7 @@
-hs.loadSpoon("MicMute")
-spoon.MicMute:bindHotkeys(
-  { toggle = {{ "ctrl" }, "m"} }
-)
+-- hs.loadSpoon("MicMute")
+
+require('vim_movement')
+
+-- spoon.MicMute:bindHotkeys(
+--   { toggle = {{ "ctrl" }, "m"} }
+-- )
