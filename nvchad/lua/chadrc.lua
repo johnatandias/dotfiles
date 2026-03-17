@@ -6,7 +6,7 @@
 local M = {}
 
 M.base46 = {
-	theme = "darcula-dark",
+	theme = "ayu_dark",
 
 	-- hl_override = {
 	-- 	Comment = { italic = true },
@@ -22,7 +22,7 @@ M.ui = {
 
 M.nvimtree = {
   view = {
-    side = "left",
+    side = "right",
     width = 30,
   },
   git = {

@@ -63,8 +63,50 @@ return {
         "typescript-language-server",
         "html-lsp",
         "css-lsp",
+        "eslint_d",
+        "prettier",
+        "jdtls",
+        "java-debug-adapter",
+        "java-test",
+        "google-java-format",
       },
     },
+  },
+
+  {
+    "mfussenegger/nvim-jdtls",
+    ft = "java",
+    config = function()
+      require "configs.jdtls"
+    end,
+  },
+
+  {
+    "mfussenegger/nvim-lint",
+    event = { "BufReadPre", "BufNewFile" },
+    config = function()
+      local lint = require("lint")
+      
+      lint.linters_by_ft = {
+        javascript = { "eslint_d" },
+        javascriptreact = { "eslint_d" },
+        typescript = { "eslint_d" },
+        typescriptreact = { "eslint_d" },
+      }
+
+      local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
+
+      vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
+        group = lint_augroup,
+        callback = function()
+          lint.try_lint()
+        end,
+      })
+
+      vim.keymap.set("n", "<leader>l", function()
+        lint.try_lint()
+      end, { desc = "Trigger linting for current file" })
+    end,
   },
 
   {
@@ -83,6 +125,7 @@ return {
         "typescript",
         "tsx",
         "json",
+        "java",
       },
       sync_install = false,
       auto_install = true,
@@ -292,6 +335,27 @@ return {
   },
 
   {
+    "rmagatti/goto-preview",
+    dependencies = { "rmagatti/logger.nvim" },
+    event = "BufEnter",
+    opts = {
+      width = 120,
+      height = 15,
+      default_mappings = false,
+      focus_on_open = true,
+      dismiss_on_move = false,
+    },
+    keys = {
+      { "gpd", function() require("goto-preview").goto_preview_definition() end, desc = "Preview Definition" },
+      { "gpt", function() require("goto-preview").goto_preview_type_definition() end, desc = "Preview Type Definition" },
+      { "gpi", function() require("goto-preview").goto_preview_implementation() end, desc = "Preview Implementation" },
+      { "gpD", function() require("goto-preview").goto_preview_declaration() end, desc = "Preview Declaration" },
+      { "gpr", function() require("goto-preview").goto_preview_references() end, desc = "Preview References" },
+      { "gP", function() require("goto-preview").close_all_win() end, desc = "Close All Previews" },
+    },
+  },
+
+  {
     "folke/which-key.nvim",
     opts = function(_, opts)
       opts.spec = opts.spec or {}
@@ -300,8 +364,10 @@ return {
         { "<leader>a", group = "AI Agents" },
         { "<leader>c", group = "AI Chat" },
         { "<leader>g", group = "Git" },
+        { "<leader>j", group = "Java" },
         { "<leader>m", group = "Markdown/MCP" },
         { "<leader>s", group = "Sessions" },
+        { "gp", group = "Goto Preview" },
       })
 
       return opts

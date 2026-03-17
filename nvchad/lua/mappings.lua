@@ -32,10 +32,17 @@ map("n", "<leader>mp", "<cmd>MarkdownPreviewToggle<CR>", { desc = "Toggle Markdo
 map("n", "<leader>md", "<cmd>MarkdownPreview<CR>", { desc = "Start Markdown Preview" })
 map("n", "<leader>mx", "<cmd>MarkdownPreviewStop<CR>", { desc = "Stop Markdown Preview" })
 
--- LazyGit
+-- Markdown Table Formatter
+map("n", "<leader>mf", function()
+  require("utils.markdown_table").format_table()
+end, { desc = "Format Markdown Table" })
+
+-- Git
 map("n", "<leader>gg", "<cmd>LazyGit<CR>", { desc = "Open LazyGit" })
 map("n", "<leader>gf", "<cmd>LazyGitCurrentFile<CR>", { desc = "LazyGit Current File" })
 map("n", "<leader>gl", "<cmd>LazyGitFilter<CR>", { desc = "LazyGit Commits" })
 map("n", "<leader>gt", "<cmd>Telescope lazygit<CR>", { desc = "Telescope LazyGit" })
+map("n", "<leader>gs", "<cmd>Telescope git_status<CR>", { desc = "Git Status" })
+map("n", "<leader>gb", function() vim.cmd("Gitsigns blame_line") end, { desc = "Git blame currrent line" })
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")

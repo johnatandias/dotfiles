@@ -11,7 +11,7 @@ vim.lsp.config.ts_ls = {
     "typescript", 
     "typescriptreact" 
   },
-  root_markers = { "package.json", "tsconfig.json", "jsconfig.json" },
+  root_markers = { "package.json", "tsconfig.json", "jsconfig.json", ".git" },
 }
 
 vim.lsp.enable(servers)
