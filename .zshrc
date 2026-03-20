@@ -11,6 +11,8 @@ ZSH_THEME="flazz"
 export NVM_LAZY_LOAD=true
 export NVM_COMPLETION=true
 
+export PATH="$HOME/.local/bin:$PATH"
+
 plugins+=(
   git
   emoji
@@ -23,6 +25,7 @@ source $ZSH/oh-my-zsh.sh
 bindkey -v
 
 alias vim='nvim'
+alias claudiao-vida-loka='claude --dangerously-skip-permissions'
 alias zs='source ~/.zshrc'
 alias ze='cd ~/.dotfiles && vim .zshrc'
 alias ve='cd ~/.dotfiles/nvim && vim nvim/init.vim'
@@ -84,6 +87,7 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden -g "!.git" '
 
 export NODE_OPTIONS=--max_old_space_size=5000
 
+# NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
