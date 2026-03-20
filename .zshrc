@@ -8,21 +8,13 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="flazz"
 
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
-source $HOME/.dotfiles/.p10k.zsh
-
 export NVM_LAZY_LOAD=true
 export NVM_COMPLETION=true
 
 plugins+=(
   git
-  yarn
   emoji
   history
-  zsh-syntax-highlighting
   fzf
 )
 
@@ -30,7 +22,7 @@ source $ZSH/oh-my-zsh.sh
 
 bindkey -v
 
-alias vim='lvim'
+alias vim='nvim'
 alias zs='source ~/.zshrc'
 alias ze='cd ~/.dotfiles && vim .zshrc'
 alias ve='cd ~/.dotfiles/nvim && vim nvim/init.vim'
@@ -48,16 +40,14 @@ alias cls="clear && printf '\e[3J'"
 alias youtube-dl="/usr/local/bin/yt-dlp_macos"
 alias youtube-dl-audio="youtube-dl --extract-audio --audio-format wav --audio-quality 0"
 alias youtube-dl-audio-video="youtube-dl -f 'bestvideo[height<=?2160]+bestaudio/best'"
-eval $(thefuck --alias)
 
 # Changing "ls" to "exa"
-alias ls='exa -a --color=always --group-directories-first' # my preferred listing
-alias la='exa -al --color=always --group-directories-first'  # all files and dirs
-alias ll='exa -l --color=always --group-directories-first'  # long format
-alias lt='exa -aT --color=always --group-directories-first' # tree listing
+alias ls='eza -a --color=always --group-directories-first' # my preferred listing
+alias la='eza -al --color=always --group-directories-first'  # all files and dirs
+alias ll='eza -l --color=always --group-directories-first'  # long format
+alias lt='eza -aT --color=always --group-directories-first' # tree listing
 
 export EDITOR='nvim'
-export TERMINAL='alacritty'
 
 # Go lang
 export GOPATH=$HOME/go
@@ -70,7 +60,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 export PYTHON_BIN_PATH="$(python3 -m site --user-base)/bin"
 export PATH="$PATH:$PYTHON_BIN_PATH"
-PATH=$(pyenv root)/shims:$PATH
+command -v pyenv >/dev/null 2>&1 && eval "$(pyenv init -)"
 
 # Java
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
@@ -87,22 +77,12 @@ export PATH=$PATH:$ANDROID_HOME/platforms
 export PATH=$ANDROID_SDK/emulator:$ANDROID_SDK/tools:$PATH
 export ANDROID_SDK_ROOT=$ANDROID_HOME/Sdk
 
-# Yarn
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH="$PATH:$(yarn global bin)"
-
-# LunarVim
-export PATH=$HOME/.local/bin:$PATH
-
 # FZF
 zvm_after_init_commands+=('[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh')
 
 export FZF_DEFAULT_COMMAND='rg --files --hidden -g "!.git" '
 
 export NODE_OPTIONS=--max_old_space_size=5000
-
-source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme
-
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
