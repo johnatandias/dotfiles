@@ -139,6 +139,16 @@ return {
   },
 
   {
+    "nvim-tree/nvim-tree.lua",
+    opts = {
+      filters = {
+        dotfiles = false,
+        git_ignored = false,
+      },
+    },
+  },
+
+  {
     "nvim-tree/nvim-web-devicons",
     opts = {
       override = {},
@@ -334,26 +344,26 @@ return {
     },
   },
 
-  {
-    "rmagatti/goto-preview",
-    dependencies = { "rmagatti/logger.nvim" },
-    event = "BufEnter",
-    opts = {
-      width = 120,
-      height = 15,
-      default_mappings = false,
-      focus_on_open = true,
-      dismiss_on_move = false,
-    },
-    keys = {
-      { "gpd", function() require("goto-preview").goto_preview_definition() end, desc = "Preview Definition" },
-      { "gpt", function() require("goto-preview").goto_preview_type_definition() end, desc = "Preview Type Definition" },
-      { "gpi", function() require("goto-preview").goto_preview_implementation() end, desc = "Preview Implementation" },
-      { "gpD", function() require("goto-preview").goto_preview_declaration() end, desc = "Preview Declaration" },
-      { "gpr", function() require("goto-preview").goto_preview_references() end, desc = "Preview References" },
-      { "gP", function() require("goto-preview").close_all_win() end, desc = "Close All Previews" },
-    },
-  },
+  -- {
+  --   "rmagatti/goto-preview",
+  --   dependencies = { "rmagatti/logger.nvim" },
+  --   event = "BufEnter",
+  --   opts = {
+  --     width = 120,
+  --     height = 15,
+  --     default_mappings = false,
+  --     focus_on_open = true,
+  --     dismiss_on_move = false,
+  --   },
+  --   keys = {
+  --     { "gpd", function() require("goto-preview").goto_preview_definition() end, desc = "Preview Definition" },
+  --     { "gpt", function() require("goto-preview").goto_preview_type_definition() end, desc = "Preview Type Definition" },
+  --     { "gpi", function() require("goto-preview").goto_preview_implementation() end, desc = "Preview Implementation" },
+  --     { "gpD", function() require("goto-preview").goto_preview_declaration() end, desc = "Preview Declaration" },
+  --     { "gpr", function() require("goto-preview").goto_preview_references() end, desc = "Preview References" },
+  --     { "gP", function() require("goto-preview").close_all_win() end, desc = "Close All Previews" },
+  --   },
+  -- },
 
   {
     "folke/which-key.nvim",
@@ -478,5 +488,62 @@ return {
     config = function()
       require("telescope").load_extension("lazygit")
     end,
+  },
+
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {
+      notify = {
+        enabled = false,
+      },
+      lsp = {
+        override = {
+          ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+          ["vim.lsp.util.stylize_markdown"] = true,
+          ["cmp.entry.get_documentation"] = true, -- For blink.cmp
+        },
+      },
+      ---@type NoicePresets
+      presets = {
+        lsp_doc_border = true,
+      },
+      ---@type NoiceRouteConfig[]
+      routes = {
+        -- Show recording messages as notify messsage
+        -- https://github.com/folke/noice.nvim/wiki/Configuration-Recipes#show-recording-messages
+        {
+          view = "notify",
+          filter = { event = "msg_showmode" },
+        },
+      },
+      ---@type NoiceConfigViews
+      views = {
+        cmdline_popup = {
+          border = {
+            style = "none",
+            padding = { 1, 2 },
+          },
+          filter_options = {},
+          win_options = {
+            winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
+          },
+        },
+      },
+    },
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    }
+  },
+
+  {
+    "Bekaboo/dropbar.nvim",
+    dependencies = {
+      "nvim-telescope/telescope-fzf-native.nvim",
+      build = "make",
+    },
+    event = { "BufReadPost", "BufNewFile" },
+    opts = {},
   },
 }
