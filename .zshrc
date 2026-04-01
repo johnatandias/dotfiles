@@ -65,9 +65,9 @@ export PYTHON_BIN_PATH="$(python3 -m site --user-base)/bin"
 export PATH="$PATH:$PYTHON_BIN_PATH"
 command -v pyenv >/dev/null 2>&1 && eval "$(pyenv init -)"
 
-# Java
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
-export PATH=$JAVA_HOME/bin:$PATH
+# Java 17 (OpenJDK via Homebrew)
+export JAVA_HOME=/opt/homebrew/opt/openjdk@17
+export PATH="$JAVA_HOME/bin:$PATH"
 
 # Android
 export ANDROID_HOME=$HOME/Android
